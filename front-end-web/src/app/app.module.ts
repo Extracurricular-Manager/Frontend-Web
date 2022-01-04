@@ -9,6 +9,7 @@ import { ChildFormComponent } from './children/child-form/child-form.component';
 import { ChildrenListComponent } from './children/children-list/children-list.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ExportsComponent } from './exports/exports.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ExportsComponent } from './exports/exports.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
