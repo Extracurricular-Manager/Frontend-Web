@@ -1,7 +1,9 @@
 .mat-tab-group{
-    background-color: #0B7158;
 }
 
+.mat-tab-labels{
+    background-color: #0B7158;
+}
 
 .mat-tab-label {
     color:white;
