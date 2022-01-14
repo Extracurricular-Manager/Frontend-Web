@@ -1,8 +1,6 @@
-.mat-tab-group{
-}
-
 .mat-tab-labels{
     background-color: #0B7158;
+    justify-content: center;
 }
 
 .mat-tab-label {
