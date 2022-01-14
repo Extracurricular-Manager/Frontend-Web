@@ -6,11 +6,10 @@ import { PricingComponent } from './pricing/pricing.component';
 import { ExportsComponent } from './exports/exports.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent, children:[
-    {path:'pricing',component: PricingComponent},
-    {path:'exports',component: ExportsComponent},
-  ] },
+  { path:'', component: LoginComponent },
+  { path:'home', component: HomeComponent},
+  { path:'pricing',component: PricingComponent},
+  { path:'exports',component: ExportsComponent},
 ];
 
 @NgModule({

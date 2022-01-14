@@ -1,0 +1,13 @@
+.mat-tab-group{
+    background-color: #0B7158;
+}
+
+
+.mat-tab-label {
+    color:white;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar { 
+    background-color:white;
+}
+
