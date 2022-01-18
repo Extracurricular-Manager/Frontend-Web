@@ -2,10 +2,15 @@
   width: 80%;
   margin-right:10%;
   margin-left:10%;
+  margin-top:20px;
   border:solid;
+  display:flex;
 }
 
-.list{
+.children-list{
+  width: 20%;
+}
+.classes-list{
   width: 20%;
 }
 
