@@ -1,1 +1,5 @@
-<p>classes-list works!</p>
+<mat-selection-list class="list" [multiple]="false">
+    <mat-list-option *ngFor="let class of classes" [value]="class">
+      {{class}}
+    </mat-list-option>
+</mat-selection-list>
