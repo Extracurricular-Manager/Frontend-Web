@@ -16,6 +16,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import { ChildrenPageComponent } from './children/children-page/children-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     ChildrenListComponent,
     PricingComponent,
     ExportsComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChildrenPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatTabsModule,
     MatCardModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
