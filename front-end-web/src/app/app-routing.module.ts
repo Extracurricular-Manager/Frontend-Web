@@ -5,10 +5,11 @@ import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ExportsComponent } from './exports/exports.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ChildrenPageComponent } from './children/children-page/children-page.component';
 
 const routes: Routes = [
   { path:'', component: LoginComponent },
-  { path:'main',component:NavbarComponent},
+  { path:'main',component:NavbarComponent },
 ];
 
 @NgModule({

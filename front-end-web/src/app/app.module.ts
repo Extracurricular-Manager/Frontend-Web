@@ -17,6 +17,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
 import { BillingComponent } from './billing/billing.component';
+import { MatListModule } from '@angular/material/list';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ChildrenPageComponent } from './children/children-page/children-page.component';
+import { ClassesListComponent } from './children/classes-list/classes-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,9 @@ import { BillingComponent } from './billing/billing.component';
     PricingComponent,
     ExportsComponent,
     NavbarComponent,
-    BillingComponent
+    BillingComponent,
+    ChildrenPageComponent,
+    ClassesListComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,8 @@ import { BillingComponent } from './billing/billing.component';
     MatButtonModule,
     MatTabsModule,
     MatCardModule,
+    MatListModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
