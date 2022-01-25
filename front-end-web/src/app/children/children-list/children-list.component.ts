@@ -9,9 +9,14 @@ export class ChildrenListComponent implements OnInit {
 
   list:string[]=["Guillaume","Guewen","Alban"];
 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getListOfChildren(child:string){
+    
   }
 
 }

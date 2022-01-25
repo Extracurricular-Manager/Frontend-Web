@@ -1,0 +1,22 @@
+.amount-missing{
+    align-content:center;
+    display:flex;
+}
+
+.container{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: auto;
+}
+
+#h4{
+    text-align:left;
+}
+
+.amount{
+    width:45%;
+}
+
+.missing{
+    width:45%;
+}

@@ -1,5 +1,5 @@
 <mat-selection-list class="list" [multiple]="false">
-    <mat-list-option *ngFor="let child of list" [value]="child">
+    <mat-list-option *ngFor="let child of list" [value]="child" (click)="getListOfChildren(child)">
       {{child}}
     </mat-list-option>
 </mat-selection-list>
