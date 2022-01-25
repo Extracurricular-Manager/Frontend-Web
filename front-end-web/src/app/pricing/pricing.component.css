@@ -3,11 +3,47 @@
     margin: auto;
 }
 
+.title{
+    font-size: 2em;
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
 .tarifDiv{
-    max-width: 600px;
-    width: 90%;
-    margin:0 auto;
-    padding:90px;
-    background-color: red;
+    max-width: 550px;
+    width: 95%;
+    margin:40px auto 0 auto;
+    padding:40px 0;
+    background-color: rgb(227, 228, 224);
+    border:6px ridge ;
+    border-radius: 10px;
     text-align: center;
+}
+
+.inputDiv{
+    margin:15px 0;
+}
+
+.inputDiv p{
+    margin: 0;
+}
+
+.inputDiv input{
+    width: 220px;
+}
+
+.inputContainer{
+    width: fit-content;
+    margin: auto;
+    padding: 0 20px;
+    text-align: left;
+    margin-bottom: 75px;
+}
+
+.submitBut{
+    width: 220px;
+    height: 2.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
 }
