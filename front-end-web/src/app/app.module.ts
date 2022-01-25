@@ -16,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
+import { BillingComponent } from './billing/billing.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     ChildrenListComponent,
     PricingComponent,
     ExportsComponent,
-    NavbarComponent
+    NavbarComponent,
+    BillingComponent
   ],
   imports: [
     BrowserModule,
