@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildFormComponent implements OnInit {
 
+  weekAmount: number=0;
+  monthAmount: number=0;
+  totalAmount: number=0;
+  
   constructor() { }
 
   ngOnInit(): void {
