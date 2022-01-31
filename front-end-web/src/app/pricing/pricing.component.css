@@ -5,31 +5,24 @@
 
 .title{
     font-size: 2em;
-    margin-top: 50px;
-    margin-bottom: 75px;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 .tarifDiv{
     max-width: 550px;
     width: 95%;
-    margin:40px auto 0 auto;
+    margin:40px auto 25px auto;
     padding:40px 0;
-    background-color: rgb(227, 228, 224);
-    border:6px ridge ;
+    background-color: rgb(246, 247, 243);
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 4px 14px 1px grey;
 }
 
 .inputDiv{
-    margin:15px 0;
-}
-
-.inputDiv p{
-    margin: 0;
-}
-
-.inputDiv input{
     width: 220px;
+    display: block;
 }
 
 .inputContainer{
@@ -37,13 +30,11 @@
     margin: auto;
     padding: 0 20px;
     text-align: left;
-    margin-bottom: 75px;
+    margin-bottom: 60px;
 }
 
 .submitBut{
     width: 220px;
     height: 2.5em;
-    border-radius: 4px;
-    cursor: pointer;
     font-size: 1.2em;
 }

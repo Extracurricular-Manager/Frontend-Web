@@ -3,29 +3,29 @@
         <p class="title">Tarifs</p>
         <div class="inputContainer">
 
-            <div class="inputDiv">
-                <p>Garderie (Matin)</p>
-                <input type="number" name="garderieMatin" min="0">
-            </div>
+            <mat-form-field appearance="fill" class="inputDiv">
+                <mat-label>Garderie (Matin)</mat-label>
+                <input type="number" name="garderieMatin" min="0" matInput />
+            </mat-form-field>
 
-            <div class="inputDiv">
-                <p>Cantine</p>
-                <input type="number" name="cantine" min="0">
-            </div>
+            <mat-form-field appearance="fill" class="inputDiv">
+                <mat-label>Cantine</mat-label>
+                <input type="number" name="cantine" min="0" matInput />
+            </mat-form-field>
 
-            <div class="inputDiv">
-                <p>Garderie (Soir)</p>
-                <input type="number" name="garderieSoir" min="0">
-            </div>
+            <mat-form-field appearance="fill" class="inputDiv">
+                <mat-label>Garderie (Soir)</mat-label>
+                <input type="number" name="garderieSoir" min="0" matInput />
+            </mat-form-field>
 
-            <div class="inputDiv">
-                <p>Centre de loisirs</p>
-                <input type="number" name="centreDeLoisir" min="0">
-            </div>
+            <mat-form-field appearance="fill" class="inputDiv">
+                <mat-label>Centre de loisirs</mat-label>
+                <input type="number" name="centreDeLoisir" min="0" matInput />
+            </mat-form-field>
 
         </div>
 
-        <button class="submitBut">
+        <button mat-raised-button class="submitBut">
             Valider
         </button>
     </div>
