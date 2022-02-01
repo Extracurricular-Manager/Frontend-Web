@@ -1,5 +1,9 @@
-<mat-selection-list class="list" [multiple]="false">
+<div class="classes">
+  <mat-selection-list class="list" [multiple]="false">
     <mat-list-option *ngFor="let class of classes" [value]="class">
-      {{class}}
+        {{class}}
+        <mat-divider></mat-divider>
     </mat-list-option>
-</mat-selection-list>
+    <mat-list-option>+</mat-list-option>
+  </mat-selection-list>
+</div>
