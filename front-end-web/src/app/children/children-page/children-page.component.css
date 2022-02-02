@@ -1,7 +1,6 @@
 .container{
+  height: 100%;
   width: 100%;
-  margin-right:5%;
-  margin-left:5%;
   padding: 5px;
 }
 
@@ -9,13 +8,8 @@
   display: inline-block;
 }
 
-.classes-list{
-  width:25%;
-  vertical-align: top;
-}
-
-.children-list{
-  width:25%;
+.list{
+  width:15%;
   vertical-align: top;
 }
 
