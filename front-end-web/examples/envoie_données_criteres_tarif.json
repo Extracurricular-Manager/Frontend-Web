@@ -1,0 +1,22 @@
+{
+    "service" : "garderieSoir",
+    "criteria" : [
+        {
+            "name" : "après",
+            "inputs" : [
+                {
+                    "name" : "heure",
+                    "value" : "18:30"
+                },
+                {
+                    "name" : "prix (euro)",
+                    "value" : "5.0"
+                },
+                {
+                    "name" : "tranche (minute)",
+                    "value" : 15
+                }
+            ]
+        }
+    ]
+}

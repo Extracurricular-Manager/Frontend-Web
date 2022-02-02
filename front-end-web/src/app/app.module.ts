@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
 import { BillingComponent } from './billing/billing.component';
@@ -46,6 +47,7 @@ import { ClassesListComponent } from './children/classes-list/classes-list.compo
     MatCardModule,
     MatListModule,
     ScrollingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
