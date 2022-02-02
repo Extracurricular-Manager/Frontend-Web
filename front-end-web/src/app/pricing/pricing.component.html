@@ -3,25 +3,22 @@
         <p class="title">Tarifs</p>
         <div class="inputContainer">
 
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Garderie (Matin)</mat-label>
-                <input type="number" name="garderieMatin" min="0" matInput />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Cantine</mat-label>
-                <input type="number" name="cantine" min="0" matInput />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Garderie (Soir)</mat-label>
-                <input type="number" name="garderieSoir" min="0" matInput />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Centre de loisirs</mat-label>
-                <input type="number" name="centreDeLoisir" min="0" matInput />
-            </mat-form-field>
+            <div *ngFor="let service of tarifServ">
+                <div>
+                    {{service.name}}
+                </div>
+                <ul>
+                    <li *ngFor="let critere of service.criteres">
+                        <span>
+                            {{critere.name}}
+                        </span>
+                        <mat-form-field appearance="fill" class="inputDiv" *ngFor="let item of critere.inputs">
+                            <mat-label>{{item.name}}</mat-label>
+                            <input type="number" name="garderieMatin" min="0" value="item.value" matInput />
+                        </mat-form-field>
+                    </li>
+                </ul>
+            </div>
 
         </div>
 
@@ -30,3 +27,5 @@
         </button>
     </div>
 </div>
+
+

@@ -1,6 +1,6 @@
 {
-    "service" : "garderieSoir",
-    "criteria" : [
+    "name" : "garderieSoir",
+    "criteres" : [
         {
             "name" : "après",
             "inputs" : [
@@ -14,7 +14,7 @@
                 },
                 {
                     "name" : "tranche (minute)",
-                    "value" : 15
+                    "value" : "15"
                 }
             ]
         }

@@ -1,20 +1,23 @@
 {
-    "service" : "garderieSoir",
-    "criteria" : [
+    "name" : "garderieSoir",
+    "criteres" : [
         {
             "name" : "après",
             "inputs" : [
                 {
                     "name" : "heure",
-                    "type" : "time"
+                    "type" : "time",
+                    "value" : "8"
                 },
                 {
                     "name" : "prix (euro)",
-                    "type" : "float"
+                    "type" : "float",
+                    "value" : "5.5"
                 },
                 {
                     "name" : "tranche (minute)",
-                    "type" : [15, 30, 45, 60]
+                    "type" : "[15, 30, 45, 60]",
+                    "value" : "15"
                 }
             ]
         }
