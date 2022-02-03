@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { serviceTarif } from './serviceTarif';
+import { critere, inputTarif, serviceTarif } from './serviceTarif';
 import SampleJson from '../../../examples/criteres_tarification.json';
 
 @Component({
@@ -26,6 +26,19 @@ export class PricingComponent implements OnInit {
   parseJSON(json:any):void{
     var serv:serviceTarif=new serviceTarif();
     serv.name=json["name"];
+    for(var crit of json["criteres"]){
+      var cri=new critere();
+      cri.name=crit["name"];
+      for(var input of crit["inputs"]){
+        var inp=new inputTarif();
+        inp.name=input["name"];
+        inp.type=input["type"];
+        inp.value=input["value"];
+        cri.inputs.push(inp);
+      }
+      serv.criteres.push(cri);
+    }
+
     this.tarifServ.push(serv);
   }
 
