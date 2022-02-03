@@ -4,7 +4,7 @@
         <div class="inputContainer">
 
             <div *ngFor="let service of tarifServ">
-                <div>
+                <div class="serviceName">
                     {{service.name}}
                 </div>
                 <ul>
@@ -12,10 +12,30 @@
                         <span>
                             {{critere.name}}
                         </span>
-                        <mat-form-field appearance="fill" class="inputDiv" *ngFor="let item of critere.inputs">
-                            <mat-label>{{item.name}}</mat-label>
-                            <input type="number" name="garderieMatin" min="0" value="item.value" matInput />
-                        </mat-form-field>
+                        <div *ngFor="let item of critere.inputs" class="inputDiv">
+
+                            <span *ngIf="item.name=='prix'">:</span>
+                            <span *ngIf="item.name=='tranche'">/</span>
+
+                            <mat-form-field appearance="fill" class="inputForm">
+                                <mat-label>{{item.name}}</mat-label>
+
+                                <ng-container *ngIf="item.type=='list'; then inputList; else inputOther"></ng-container>
+
+                                <ng-template #inputOther>
+                                    <input type="{{item.type}}" step="{{item.step}}" min="0" value="{{item.value}}" matInput />
+                                </ng-template>
+
+                                <ng-template #inputList>
+                                    <input [attr.list]="item.name" value="{{item.value}}" matInput />
+                                    <datalist id="{{item.name}}">
+                                        <option *ngFor="let valeur of item.valPos" value="{{valeur}}">
+                                      </datalist>
+                                </ng-template>
+                            </mat-form-field>
+                            
+                        </div>
+                       
                     </li>
                 </ul>
             </div>

@@ -10,7 +10,7 @@
 }
 
 .tarifDiv{
-    max-width: 1000px;
+    max-width: 900px;
     width: 95%;
     margin:40px auto 25px auto;
     padding:40px 0;
@@ -19,12 +19,16 @@
     text-align: center;
     box-shadow: 0px 4px 14px 1px grey;
 }
-
-.inputDiv{
-    width: 220px;
-    /*display: block;*/
+.serviceName{
+    font-size: 1.6em;
 }
-
+.inputDiv{
+    /*width: 220px;*/
+    display: inline-block;
+}
+.inputForm{
+    margin:0 5px;
+}
 .inputContainer{
     width: fit-content;
     margin: auto;

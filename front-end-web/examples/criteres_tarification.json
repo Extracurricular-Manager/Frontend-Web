@@ -1,5 +1,5 @@
 {
-    "name" : "garderieSoir",
+    "name" : "Garderie du soir",
     "criteres" : [
         {
             "name" : "après",
@@ -7,17 +7,17 @@
                 {
                     "name" : "heure",
                     "type" : "time",
-                    "value" : "8"
+                    "value" : 8
                 },
                 {
-                    "name" : "prix (euro)",
+                    "name" : "prix",
                     "type" : "float",
-                    "value" : "5.5"
+                    "value" : 5.5
                 },
                 {
-                    "name" : "tranche (minute)",
-                    "type" : "[15, 30, 45, 60]",
-                    "value" : "15"
+                    "name" : "tranche",
+                    "type" : [15, 30, 45, 60],
+                    "value" : 15
                 }
             ]
         }

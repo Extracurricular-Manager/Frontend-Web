@@ -32,7 +32,30 @@ export class PricingComponent implements OnInit {
       for(var input of crit["inputs"]){
         var inp=new inputTarif();
         inp.name=input["name"];
-        inp.type=input["type"];
+
+        //TYPE
+        if(typeof(input["type"]) == "string"){
+          switch(input["type"]){
+            case "int":
+              inp.type="number";break;
+            case "float":
+              inp.step="any";
+              inp.type="number";break;
+
+            case "heure":
+            case "time":
+              inp.type="time";break;
+
+            default:
+              inp.type="number";break;
+          }
+        }else{//type est une liste de valeur possible
+          inp.type="list";
+          inp.valPos=input["type"];
+          console.log(inp.valPos);
+        }
+        //TYPE
+
         inp.value=input["value"];
         cri.inputs.push(inp);
       }

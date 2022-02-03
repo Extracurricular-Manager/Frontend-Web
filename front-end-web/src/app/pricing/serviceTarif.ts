@@ -13,6 +13,10 @@ export class critere{
 
 export class inputTarif{
     name:string="";
+    
     type:string="";
+    step:string="default";
+
+    valPos:Array<any>=[];
     value:string="";//valeur actuelle
 }
