@@ -1,6 +1,33 @@
 [
     {
         "id":"0",
+        "name":"",
+        "surname":"",
+        "adelphie":{
+            "id":0,
+            "postalAdress":"",
+            "referingParentName":"",
+            "referingParentSurname":"",
+            "telephoneNumber":""
+        },
+        "birthday":"",
+        "classroom":{
+            "id":0,
+            "name":"",
+            "professor":""
+        },
+        "diet":{
+            "id":0,
+            "name":"",
+            "description":""
+        },
+        "gradelevel":{
+            "id":0,
+            "level":""
+        }
+    },
+    {
+        "id":"1",
         "name":"Guewen",
         "surname":"Morice",
         "adelphie":{
@@ -25,8 +52,9 @@
             "id":1,
             "level":"CP"
         }
-    },    {
-        "id":"1",
+    },
+    {
+        "id":"10",
         "name":"Alban",
         "surname":"Morice",
         "adelphie":{

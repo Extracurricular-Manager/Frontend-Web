@@ -8,10 +8,10 @@ import { Child } from '../objects/child';
 })
 export class ChildService {
 
-  public child=new BehaviorSubject<string>("");
+  public child=new BehaviorSubject<number>(0);
   public currentChild=this.child.asObservable();
 
-  updateCurrentChild(c:string){
+  updateCurrentChildId(c:number){
       this.child.next(c);
   }
   

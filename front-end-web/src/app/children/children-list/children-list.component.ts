@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Child } from 'src/app/objects/child';
+import { ChildService } from 'src/app/service/child-service.service';
 import { ClassroomService } from 'src/app/service/classroom-service.service';
 import SampleJson from '../../../../examples/child.json'
 
@@ -13,10 +14,10 @@ export class ChildrenListComponent implements OnInit {
   classroom:string="";
   list:Child[]=[];
 
-  constructor(private service:ClassroomService) { }
+  constructor(private serviceClassroom:ClassroomService,private serviceChild:ChildService) { }
 
   ngOnInit(): void {
-    this.service.currentClassroom.subscribe(
+    this.serviceClassroom.currentClassroom.subscribe(
       data=>{
         console.log("currentClassroom="+this.classroom);
         this.classroom=data;
@@ -27,12 +28,12 @@ export class ChildrenListComponent implements OnInit {
   }
 
   getListOfChildren(child:number){
-    
+    this.serviceChild.updateCurrentChildId(child+1);
   }
 
   updateList(){
     this.list=[];
-    for (let i = 0; i < SampleJson.length; i++) {
+    for (let i = 1; i <= SampleJson.length; i++) {
       console.log("child classroom="+SampleJson[i].classroom.name+
       "  "+"current classroom="+this.classroom);
       if(SampleJson[i].classroom.name==this.classroom){
