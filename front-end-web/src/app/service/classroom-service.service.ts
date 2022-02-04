@@ -8,6 +8,11 @@ import { Classroom } from '../objects/classroom';
 })
 export class ClassroomService {
   
+
+  public classroom=new BehaviorSubject<string>("");
+  public currentClassroom=this.classroom.asObservable();
+
+
   urlClassroom:string="http://localhost:8080/api/classroom";
 
   optionRequete = {
@@ -21,6 +26,10 @@ export class ClassroomService {
   public currentClass=this.class.asObservable();
  
   constructor(private http:HttpClient) { }
+
+  updateCurrentClassroom(c:string){
+    this.classroom.next(c);
+  }
 
   updateCurrentClass(c:string){
     this.class.next(c);

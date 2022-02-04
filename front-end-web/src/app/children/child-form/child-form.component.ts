@@ -12,15 +12,16 @@ export class ChildFormComponent implements OnInit {
   weekAmount: number=0;
   monthAmount: number=0;
   totalAmount: number=0;
+
   child:Child=new Child(
-    Number(SampleJson.id),
-    SampleJson.name,
-    SampleJson.surname,
-    SampleJson.adelphie,
-    SampleJson.birthday,
-    SampleJson.classroom,
-    SampleJson.diet,
-    SampleJson.gradelevel
+    Number(SampleJson[0].id),
+    SampleJson[0].name,
+    SampleJson[0].surname,
+    SampleJson[0].adelphie,
+    SampleJson[0].birthday,
+    SampleJson[0].classroom,
+    SampleJson[0].diet,
+    SampleJson[0].gradelevel
   );
 
   
