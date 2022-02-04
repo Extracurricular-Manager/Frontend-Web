@@ -11,5 +11,6 @@
     margin-right: 2%;
     overflow-x:hidden;
     overflow-y:auto;    
-    height:90vh;
+    height: auto;
+    max-height:90vh;
 }

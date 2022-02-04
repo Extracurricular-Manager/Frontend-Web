@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildrenListComponent implements OnInit {
 
-  list:string[]=["Guillaume","Guewen","Alban"];
+  list:string[]=["Guillaume","Guewen","Alban","Guillaume","Guewen","Alban","Guillaume","Guewen","Alban","Guillaume","Guewen","Alban","Guillaume","Guewen","Alban",
+  "Guillaume","Guewen","Alban","Guillaume","Guewen","Alban","Guillaume","Guewen","Alban",];
 
 
   constructor() { }
