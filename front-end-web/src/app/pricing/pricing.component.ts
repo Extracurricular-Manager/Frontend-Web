@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { critere, inputTarif, serviceTarif } from './serviceTarif';
 import SampleJson from '../../../examples/criteres_tarification.json';
+import BrowserModule from "@angular/platform-browser";
+import CommonModule from "@angular/common";
 
 @Component({
   selector: 'app-pricing',
@@ -63,6 +65,16 @@ export class PricingComponent implements OnInit {
     }
 
     this.tarifServ.push(serv);
+  }
+
+  resetInput(e:Event){
+    if(e.target){
+      var input:HTMLInputElement=<HTMLInputElement>e.target;//cast
+      if(input!=null){
+        input.value="";
+        input.click();//on refait un clique pour rafraichir le rendu _ mais ca ne marche pas pour le moment
+      }
+    }
   }
 
 }
