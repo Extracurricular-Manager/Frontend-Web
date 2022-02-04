@@ -41,7 +41,7 @@ export class ClassesListComponent implements OnInit {
 
   classroomToList(){
     for(let c of this.classroomField){
-      this.classroomList.push(c.name);
+      this.classroomList.push(c.name as unknown as string);
     }
   }
 }

@@ -50,7 +50,5 @@ export class ChildrenListComponent implements OnInit {
         );
       }
     }
-
   }
-
 }

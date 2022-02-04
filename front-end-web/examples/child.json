@@ -18,8 +18,8 @@
         },
         "diet":{
             "id":0,
-            "name":"",
-            "description":""
+            "name":null,
+            "description":null
         },
         "gradelevel":{
             "id":0,
