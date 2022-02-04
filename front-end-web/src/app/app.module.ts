@@ -22,7 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ChildrenPageComponent } from './children/children-page/children-page.component';
 import { ClassesListComponent } from './children/classes-list/classes-list.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
