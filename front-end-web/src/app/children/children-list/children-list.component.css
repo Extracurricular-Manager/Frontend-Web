@@ -9,4 +9,8 @@
     border-radius: 10px;
     margin-left: 2%;
     margin-right: 2%;
+    overflow-x:auto;
+    overflow-y:auto;    
+    height: auto;
+    max-height:90vh;
 }

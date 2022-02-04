@@ -1,6 +1,6 @@
 <div class="container">
     <div class="form-global">
-        <h2>Nom Prenom</h2>
+        <h2>{{child.name}} {{child.surname}}</h2>
         <h3>Informations</h3>
         <mat-divider></mat-divider>
 
@@ -8,14 +8,10 @@
             <div class="amounts">
                 <h4 class="amount">Montant dû cette semaine : {{weekAmount}}€</h4>
                 <h4 class="amount">Montant dû ce mois-ci : {{monthAmount}}€</h4>
-                <h4 class="amount">Montant dû au total : {{totalAmount}}€</h4>
             </div>
 
             <div class="missing">
-                <h4>Absences :</h4>
-                <div class="missing-ui">
-                    test
-                </div>
+                <h4 class="amount">Montant dû au total : {{totalAmount}}€</h4>
             </div>
         </div>
 
@@ -64,7 +60,7 @@
                         <h4>Revenus du foyer</h4>
                         <mat-form-field appearance="fill">
                             <mat-label>Revenus du foyer</mat-label>
-                            <input matInput value="{{child.gradelevel.level}}">
+                            <input matInput value="">
                         </mat-form-field>
                     </div>
                 </div>

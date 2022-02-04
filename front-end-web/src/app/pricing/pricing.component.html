@@ -27,10 +27,10 @@
                                 </ng-template>
 
                                 <ng-template #inputList>
-                                    <input [attr.list]="item.name" value="{{item.value}}" matInput />
+                                    <input [attr.list]="item.name" [value]="item.value" (click)="resetInput($event)" matInput /><!---->
                                     <datalist id="{{item.name}}">
-                                        <option *ngFor="let valeur of item.valPos" value="{{valeur}}">
-                                      </datalist>
+                                        <option *ngFor="let valeur of item.valPos" [value]="valeur">
+                                    </datalist>
                                 </ng-template>
                             </mat-form-field>
                             

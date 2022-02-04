@@ -1,6 +1,27 @@
-{
-    "id":"1",
-    "name":"CP",
-    "prof":"Jean Dupont"
-
-}
+[
+    {
+        "id":"0",
+        "name":"CP",
+        "prof":"Jean Dupont1"
+    },
+    {
+        "id":"1",
+        "name":"CE1",
+        "prof":"Jean Dupont2"
+    },
+    {
+        "id":"2",
+        "name":"CE2",
+        "prof":"Jean Dupont3"
+    },
+    {
+        "id":"3",
+        "name":"CM1",
+        "prof":"Jean Dupont4"
+    },
+    {
+        "id":"4",
+        "name":"CM2",
+        "prof":"Jean Dupont5"
+    }
+]
