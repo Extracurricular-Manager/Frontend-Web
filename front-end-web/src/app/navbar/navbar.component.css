@@ -11,3 +11,7 @@
     background-color:white;
 }
 
+mat-tab > * {
+    height: 90vh;
+}
+
