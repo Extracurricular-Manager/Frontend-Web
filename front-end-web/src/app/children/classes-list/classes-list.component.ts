@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Classroom } from 'src/app/objects/classroom';
 import { ClassroomService } from 'src/app/service/classroom-service.service';
+import SampleJson from '../../../../examples/classes.json'
 
 @Component({
   selector: 'app-classes-list',
@@ -11,13 +12,18 @@ export class ClassesListComponent implements OnInit {
 
   classroomField:Classroom[]=[];
   classroomList:string[]=[];
+
   constructor(private classroomService:ClassroomService) { }
 
   ngOnInit() {
-    this.classroomService.getAll().subscribe(
+/*    this.classroomService.getAll().subscribe(
       data=>{this.classroomField=data}
     );
-    this.classroomToList;
+*/
+    console.log(SampleJson);
+    this.classroomField.push(new Classroom(Number(SampleJson.id),SampleJson.name,SampleJson.prof));
+    this.classroomToList();
+    console.log(this.classroomField);
   }
 
   currentClass(c:string){

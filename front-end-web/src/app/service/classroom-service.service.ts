@@ -1,14 +1,21 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap } from 'rxjs';
 import { Classroom } from '../objects/classroom';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClassroomService {
-
+  
   urlClassroom:string="http://localhost:8080/api/classroom";
+
+  optionRequete = {
+    headers: new HttpHeaders({ 
+      'Access-Control-Allow-Origin':'*',
+      'mon-entete-personnalise':'maValeur'
+    })
+  };
 
   public class=new BehaviorSubject<string>("");
   public currentClass=this.class.asObservable();
@@ -21,8 +28,9 @@ export class ClassroomService {
 
 
   getAll():Observable<Classroom[]>{
-      return this.http.get<Classroom[]>(this.urlClassroom+"s");
+      return this.http.get<Classroom[]>(this.urlClassroom+"s",this.optionRequete);
   }
+  
 
   getClassroom(id:number):Observable<Classroom>{
       return this.http.get<Classroom>(this.urlClassroom+"/"+id);

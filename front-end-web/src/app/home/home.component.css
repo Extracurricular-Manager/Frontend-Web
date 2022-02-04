@@ -15,6 +15,11 @@
     box-shadow: 0px 4px 14px 1px grey;
 }
 
+.home-card{
+    height: auto;
+    max-height: 80vh;
+}
+
 .tdb{
     margin-left:20%;
     margin-right:20%;
