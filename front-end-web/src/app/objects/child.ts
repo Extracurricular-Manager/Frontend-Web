@@ -5,13 +5,13 @@ import { GradeLevel } from "./grade-level";
 
 export class Child {
     id:number;
-    name:string;
-    surname:string;
-    adelphie:Family;
-    birthday:string;
-    classroom:Classroom;
-    diet:Diet;
-    gradelevel:GradeLevel;
+    name:string|null;
+    surname:string|null;
+    adelphie:Family|null;
+    birthday:string|null;
+    classroom:Classroom|null;
+    diet:Diet|null;
+    gradelevel:GradeLevel|null;
 
     constructor(id:number, name:string, surname:string, adelphie:Family, birthday:string,
         classroom:Classroom, diet:Diet, gradelevel:GradeLevel){

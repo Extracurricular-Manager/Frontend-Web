@@ -1,27 +1,299 @@
-{
-    "id":"1",
-    "name":"Guewen",
-    "surname":"Morice",
-    "adelphie":{
-        "id":1,
-        "postalAdress":"1 rue test",
-        "referingParentName":"maman",
-        "referingParentSurname":"maman",
-        "telephoneNumber":"1234567890"
+[
+    {
+        "id":"0",
+        "name":"",
+        "surname":"",
+        "adelphie":{
+            "id":0,
+            "postalAdress":"",
+            "referingParentName":"",
+            "referingParentSurname":"",
+            "telephoneNumber":""
+        },
+        "birthday":"",
+        "classroom":{
+            "id":0,
+            "name":"",
+            "professor":""
+        },
+        "diet":{
+            "id":0,
+            "name":null,
+            "description":null
+        },
+        "gradelevel":{
+            "id":0,
+            "level":""
+        }
     },
-    "birthday":"01-01-2000",
-    "classroom":{
-        "id":1,
-        "name":"CP",
-        "professor":"Jean Dupond"
+    {
+        "id":"1",
+        "name":"Guewen",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CP",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
     },
-    "diet":{
-        "id":1,
-        "name":"gluten",
-        "description":"allergique au gluten"
-    },
-    "gradelevel":{
-        "id":1,
-        "level":"CP"
+    {
+        "id":"10",
+        "name":"Alban",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CP",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"2",
+        "name":"Guillaume",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CE1",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"3",
+        "name":"Curtis",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CE1",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"4",
+        "name":"Arthur",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CE2",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"5",
+        "name":"Sarah",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CE2",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"6",
+        "name":"Armine",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CM1",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"7",
+        "name":"Théo",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CM1",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"8",
+        "name":"Benjamin",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CM2",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
+    },    
+    {
+        "id":"9",
+        "name":"Adrian",
+        "surname":"Morice",
+        "adelphie":{
+            "id":1,
+            "postalAdress":"1 rue test",
+            "referingParentName":"maman",
+            "referingParentSurname":"maman",
+            "telephoneNumber":"1234567890"
+        },
+        "birthday":"01-01-2000",
+        "classroom":{
+            "id":1,
+            "name":"CM2",
+            "professor":"Jean Dupond"
+        },
+        "diet":{
+            "id":1,
+            "name":"gluten",
+            "description":"allergique au gluten"
+        },
+        "gradelevel":{
+            "id":1,
+            "level":"CP"
+        }
     }
-}
+]

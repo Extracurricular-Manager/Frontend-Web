@@ -20,19 +20,28 @@ export class ClassesListComponent implements OnInit {
       data=>{this.classroomField=data}
     );
 */
-    console.log(SampleJson);
-    this.classroomField.push(new Classroom(Number(SampleJson.id),SampleJson.name,SampleJson.prof));
+
+
+    this.classroomField=[];
+    console.log(SampleJson.length);
+    for(var i=0; i<SampleJson.length; i++){
+      console.log("name:"+SampleJson[i].name+" prof="+SampleJson[i].prof);
+      this.classroomField.push(new Classroom(Number(SampleJson[i].id),SampleJson[i].name,SampleJson[i].prof));
+    }
     this.classroomToList();
     console.log(this.classroomField);
-  }
+}
 
   currentClass(c:string){
-    this.classroomService.updateCurrentClass(c);
+    this.classroomService.updateCurrentClassroom(c);
+    this.classroomService.currentClassroom.subscribe(
+      data=>(console.log("valeur="+data))
+    );
   }
 
   classroomToList(){
     for(let c of this.classroomField){
-      this.classroomList.push(c.name);
+      this.classroomList.push(c.name as unknown as string);
     }
   }
 }

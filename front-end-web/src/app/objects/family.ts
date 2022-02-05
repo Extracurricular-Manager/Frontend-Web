@@ -1,9 +1,9 @@
 export class Family {
     id:number;
-    postalAdress:string;
-    referingParentName:string;
-    referingParentSurname:string;
-    telephoneNumber:string;
+    postalAdress:string|null;
+    referingParentName:string|null;
+    referingParentSurname:string|null;
+    telephoneNumber:string|null;
 
 
     constructor(id:number, postalAdress:string, referingParentName:string, 

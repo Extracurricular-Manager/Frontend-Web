@@ -1,7 +1,7 @@
 export class Diet {
     id:number;
-    name:string;
-    description:string;
+    name:string|null;
+    description:string|null;
 
     constructor(id:number, name:string, description:string){
         this.id = id;

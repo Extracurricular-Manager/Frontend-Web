@@ -1,6 +1,6 @@
 export class GradeLevel {
     id:number;
-    level:string;
+    level:string|null;
 
     constructor(id:number, level:string){
         this.id = id;
