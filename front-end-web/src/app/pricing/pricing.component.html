@@ -9,9 +9,9 @@
                 </div>
                 <ul>
                     <li *ngFor="let critere of service.criteres">
-                        <span>
+                        <p class="criterName">
                             {{critere.name}}
-                        </span>
+                        </p>
                         <div *ngFor="let item of critere.inputs" class="inputDiv">
 
                             <span *ngIf="item.name=='prix'">:</span>
@@ -27,7 +27,8 @@
                                 </ng-template>
 
                                 <ng-template #inputList>
-                                    <input [attr.list]="item.name" [value]="item.value" (click)="resetInput($event)" matInput /><!---->
+                                    <input [attr.list]="item.name" [value]="item.value" (mousedown)="resetInput($event)" (touchstart)="resetInput($event)" matInput />
+                                    <!--(mousedown)="resetInput($event)" (touchstart)="resetInput($event)"-->
                                     <datalist id="{{item.name}}">
                                         <option *ngFor="let valeur of item.valPos" [value]="valeur">
                                     </datalist>
@@ -42,7 +43,7 @@
 
         </div>
 
-        <button mat-raised-button class="submitBut">
+        <button mat-raised-button class="submitBut" (click)="sendJSON()">
             Valider
         </button>
     </div>

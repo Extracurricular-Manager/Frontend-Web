@@ -4,7 +4,6 @@ export class serviceTarif{
 }
 
 
-
 export class critere{
     name:string="";
     inputs: Array<inputTarif>=[];
