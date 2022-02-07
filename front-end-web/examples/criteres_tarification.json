@@ -1,72 +1,72 @@
 [
-{
-    "name" : "Garderie du matin",
-    "criteres" : [
-        {
-            "name" : "Avant",
-            "inputs" : [
-                {
-                    "name" : "heure",
-                    "type" : "time",
-                    "value" : "08:15"
-                },
-                {
-                    "name" : "prix",
-                    "type" : "float",
-                    "value" : 5.5
-                },
-                {
-                    "name" : "tranche",
-                    "type" : [15, 30, 45, 60],
-                    "value" : 15
-                }
-            ]
-        }
-    ]
-},
-{
-    "name" : "Garderie du soir",
-    "criteres" : [
-        {
-            "name" : "Après",
-            "inputs" : [
-                {
-                    "name" : "heure",
-                    "type" : "time",
-                    "value" : "17:30"
-                },
-                {
-                    "name" : "prix",
-                    "type" : "float",
-                    "value" : 5.5
-                },
-                {
-                    "name" : "tranche",
-                    "type" : [15, 30, 45, 60],
-                    "value" : 15
-                }
-            ]
-        },
-        {
-            "name" : "Nombre de frères/soeurs en APC >",
-            "inputs" : [
-                {
-                    "name" : "frères/soeurs",
-                    "type" : "int",
-                    "value" : 0
-                },
-                {
-                    "name" : "prix",
-                    "type" : "float",
-                    "value" : 0
-                },
-                {
-                    "name" : "tranche",
-                    "type" : [15, 30, 45, 60],
-                    "value" : 15
-                }
-            ]
-        }
-    ]
-}
+    {
+        "name" : "Garderie du matin",
+        "criteres" : [
+            {
+                "name" : "Avant",
+                "inputs" : [
+                    {
+                        "name" : "heure",
+                        "type" : "time",
+                        "value" : "08:15"
+                    },
+                    {
+                        "name" : "prix",
+                        "type" : "float",
+                        "value" : 5.5
+                    },
+                    {
+                        "name" : "tranche",
+                        "type" : [15, 30, 45, 60],
+                        "value" : 15
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name" : "Garderie du soir",
+        "criteres" : [
+            {
+                "name" : "Après",
+                "inputs" : [
+                    {
+                        "name" : "heure",
+                        "type" : "time",
+                        "value" : "17:30"
+                    },
+                    {
+                        "name" : "prix",
+                        "type" : "float",
+                        "value" : 5.5
+                    },
+                    {
+                        "name" : "tranche",
+                        "type" : [15, 30, 45, 60],
+                        "value" : 15
+                    }
+                ]
+            },
+            {
+                "name" : "Nombre de frères/soeurs en APC >",
+                "inputs" : [
+                    {
+                        "name" : "frères/soeurs",
+                        "type" : "int",
+                        "value" : 0
+                    },
+                    {
+                        "name" : "prix",
+                        "type" : "float",
+                        "value" : 0
+                    },
+                    {
+                        "name" : "tranche",
+                        "type" : [15, 30, 45, 60],
+                        "value" : 15
+                    }
+                ]
+            }
+        ]
+    }
 ]

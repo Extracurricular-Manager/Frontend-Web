@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Child } from 'src/app/objects/child';
 import { ChildService } from 'src/app/service/child-service.service';
 import { ClassroomService } from 'src/app/service/classroom-service.service';
-import SampleJson from '../../../../examples/child.json'
+import SampleJson from '../../../../examples/child.json';
+import { CreateChildComponent } from './create-child/create-child.component';
 
 @Component({
   selector: 'app-children-list',
@@ -14,7 +16,8 @@ export class ChildrenListComponent implements OnInit {
   classroom:string="";
   list:Child[]=[];
 
-  constructor(private serviceClassroom:ClassroomService,private serviceChild:ChildService) { }
+  constructor(private serviceClassroom:ClassroomService,private serviceChild:ChildService,
+    private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.serviceClassroom.currentClassroom.subscribe(
@@ -30,6 +33,7 @@ export class ChildrenListComponent implements OnInit {
   getListOfChildren(child:number){
     this.serviceChild.updateCurrentChildId(child+1);
   }
+
 
   updateList(){
     this.list=[];
@@ -51,4 +55,18 @@ export class ChildrenListComponent implements OnInit {
       }
     }
   }
+
+  createChild(){
+    const createChildRef=this.dialog.open(CreateChildComponent, {
+      width: '250px',
+      data: {}
+    });
+
+    createChildRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
 }
+
