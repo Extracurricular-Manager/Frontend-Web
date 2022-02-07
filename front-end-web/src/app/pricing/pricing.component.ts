@@ -24,45 +24,49 @@ export class PricingComponent implements OnInit {
 
 
   parseJSON(json:any):void{
-    var serv:serviceTarif=new serviceTarif();
-    serv.name=json["name"];
-    for(var crit of json["criteres"]){
-      var cri=new critere();
-      cri.name=crit["name"];
-      for(var input of crit["inputs"]){
-        var inp=new inputTarif();
-        inp.name=input["name"];
+    this.tarifServ=[];
 
-        //TYPE
-        if(typeof(input["type"]) == "string"){
-          switch(input["type"]){
-            case "int":
-              inp.type="number";break;
-            case "float":
-              inp.step="any";
-              inp.type="number";break;
+    for(var service of json){
+      var serv:serviceTarif=new serviceTarif();
+      serv.name=service["name"];
+      for(var crit of service["criteres"]){
+        var cri=new critere();
+        cri.name=crit["name"];
+        for(var input of crit["inputs"]){
+          var inp=new inputTarif();
+          inp.name=input["name"];
 
-            case "heure":
-            case "time":
-              inp.type="time";break;
+          //TYPE
+          if(typeof(input["type"]) == "string"){
+            switch(input["type"]){
+              case "int":
+                inp.type="number";break;
+              case "float":
+                inp.step="any";
+                inp.type="number";break;
 
-            default:
-              inp.type="number";break;
+              case "heure":
+              case "time":
+                inp.type="time";break;
+
+              default:
+                inp.type="number";break;
+            }
+          }else{//type est une liste de valeur possible
+            inp.type="list";
+            inp.valPos=input["type"];
+            console.log(inp.valPos);
           }
-        }else{//type est une liste de valeur possible
-          inp.type="list";
-          inp.valPos=input["type"];
-          console.log(inp.valPos);
+          //TYPE
+
+          inp.value=input["value"];
+          cri.inputs.push(inp);
         }
-        //TYPE
-
-        inp.value=input["value"];
-        cri.inputs.push(inp);
+        serv.criteres.push(cri);
       }
-      serv.criteres.push(cri);
-    }
 
-    this.tarifServ.push(serv);
+      this.tarifServ.push(serv);
+    }
   }
 
   resetInput(e:Event){
