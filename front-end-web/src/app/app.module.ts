@@ -23,6 +23,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ChildrenPageComponent } from './children/children-page/children-page.component';
 import { ClassesListComponent } from './children/classes-list/classes-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateChildComponent } from './children/children-list/create-child/create-child.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     BillingComponent,
     ChildrenPageComponent,
-    ClassesListComponent
+    ClassesListComponent,
+    CreateChildComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     ScrollingModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
