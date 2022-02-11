@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { critere, inputTarif, serviceTarif } from './serviceTarif';
-import SampleJson from '../../../examples/criteres_tarification.json';
+import SampleJson from '../../../../examples/criteres_tarification.json';
 
 @Component({
   selector: 'app-pricing',
@@ -10,7 +10,7 @@ import SampleJson from '../../../examples/criteres_tarification.json';
 export class PricingComponent implements AfterViewInit {
 
   tarifServ:Array<serviceTarif>=[];
-  
+
 
   constructor() {
     //console.log(SampleJson);
