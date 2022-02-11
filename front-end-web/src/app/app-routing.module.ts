@@ -4,7 +4,7 @@ import { LoginComponent } from './view/login/login.component';
 import { HomeComponent } from './view/home/home.component';
 import { PricingComponent } from './view/pricing/pricing.component';
 import { ExportsComponent } from './view/exports/exports.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChildrenPageComponent } from './view/children-page/children-page.component';
 import {BillingComponent} from "./view/billing/billing.component";
 
