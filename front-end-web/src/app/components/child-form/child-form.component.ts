@@ -23,10 +23,10 @@ export class ChildFormComponent implements OnInit {
     SampleJson[this.childId].classroom,
     SampleJson[this.childId].diet,
     SampleJson[this.childId].gradelevel
-  );;
-  
+  );
 
-  
+
+
   constructor(private childService:ChildService) { }
 
   ngOnInit(): void {
@@ -49,6 +49,6 @@ export class ChildFormComponent implements OnInit {
       SampleJson[this.childId].diet,
       SampleJson[this.childId].gradelevel
     );
-  
+
   }
 }

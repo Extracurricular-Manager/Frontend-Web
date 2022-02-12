@@ -1,4 +1,4 @@
-<div class="classes">
+<mat-card>
   <mat-selection-list class="list" [multiple]="false">
     <mat-list-option *ngFor="let class of classroomList" [value]="class" (click)="currentClass(class)">
         {{class}}
@@ -6,4 +6,4 @@
     </mat-list-option>
     <mat-list-option>+</mat-list-option>
   </mat-selection-list>
-</div>
+</mat-card>
