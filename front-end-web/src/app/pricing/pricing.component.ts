@@ -94,10 +94,22 @@ export class PricingComponent implements AfterViewInit {
     alert("coucou");
   }
 
+  //create a json with given data and sent it
   sendJSON(){
-    for(var service of this.tarifServ){
+  var json:Array<Object>=[];
 
+    for(var service of this.tarifServ){
+      var serv={name:service.name,criteres:<any>[]};
+
+      for(var crit of service.criteres){
+
+      }
+      
+      json.push(serv);
     }
+
+    //console.log(json);
+    console.log(JSON.stringify(json));
   }
 
   getFontSize(lgth:number):number{
