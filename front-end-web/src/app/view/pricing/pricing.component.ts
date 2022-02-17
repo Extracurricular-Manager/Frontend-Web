@@ -90,19 +90,24 @@ export class PricingComponent implements AfterViewInit {
     }
   }
 
-  coucou(){
-    alert("coucou");
-  }
-
+  
   //create a json with given data and sent it
   sendJSON(){
   var json:Array<Object>=[];
 
-    for(var service of this.tarifServ){
+    for(var service of this.tarifServ){//Pour chaque service
       var serv={name:service.name,criteres:<any>[]};
 
-      for(var crit of service.criteres){
+      for(var crit of service.criteres){//Pour chaque critere
+        var critare={name:crit.name,inputs:<any>[]};
 
+        for(var inp of crit.inputs){//Pour chaque input
+          var input={name:inp.name,value:inp.value};//On renseigne juste le name et la value
+
+          critare.inputs.push(input);
+        }
+
+        serv.criteres.push(critare);
       }
       
       json.push(serv);
@@ -111,6 +116,7 @@ export class PricingComponent implements AfterViewInit {
     //console.log(json);
     console.log(JSON.stringify(json));
   }
+
 
   getFontSize(lgth:number):number{
     var res:number=(1.2/Math.pow(lgth/6,0.15))
