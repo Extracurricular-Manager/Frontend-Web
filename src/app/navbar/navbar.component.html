@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-    <div><img id='logo' src="../../assets/favicon.png"></div>
+    <div><img id='logo' src="../../assets/navbaricon.png" alt="Logo"></div>
     <div *ngFor="let item of menuItems">
         <a mat-button [routerLink]="[item[1]]" [routerLinkActive]="['mat-flat-button','mat-accent']"> {{item[0]}} </a>
     </div>

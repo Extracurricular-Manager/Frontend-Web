@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'pricing', component:PricingViewComponent},
   {path: 'children', component:ClassChildrenViewComponent},
   {path: 'home', component:DashboardViewComponent},
-  {path:'', redirectTo:'home',pathMatch:'full'},
+  {path: '', redirectTo:'home', pathMatch:'full'},
 ];
 
 @NgModule({
