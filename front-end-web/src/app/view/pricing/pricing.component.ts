@@ -1,27 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { critere, inputTarif, serviceTarif } from './serviceTarif';
-import SampleJson from '../../../examples/criteres_tarification.json';
+import SampleJson from '../../../../examples/criteres_tarification.json';
 
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
   styleUrls: ['./pricing.component.css']
 })
-export class PricingComponent implements OnInit {
+export class PricingComponent implements AfterViewInit {
 
   tarifServ:Array<serviceTarif>=[];
 
 
   constructor() {
-    console.log(SampleJson);
+    //console.log(SampleJson);
     this.parseJSON(SampleJson);
   }
 
 
-  ngOnInit(): void {
-    //Todo: demander au backend l objet json
-  }
 
+  ngAfterViewInit(){
+  }
 
   parseJSON(json:any):void{
     this.tarifServ=[];
@@ -73,53 +72,54 @@ export class PricingComponent implements OnInit {
     if(e.target){
       var input:HTMLInputElement=<HTMLInputElement>e.target;//cast
       if(input!=null){
+        input.setAttribute("lastVal",input.value);
         input.value="";
       }
     }
   }
 
-  sendJSON(){
-    for(var service of this.tarifServ){
-
+  unfocusInput(e:Event){
+    if(e.target){
+      var input:HTMLInputElement=<HTMLInputElement>e.target;//cast
+      if(input!=null){
+        var v=input.getAttribute("lastVal");
+        if(input.value=="" && v!=null){
+          input.value=v;
+        }
+      }
     }
   }
 
+  
+  //create a json with given data and sent it
+  sendJSON(){
+  var json:Array<Object>=[];
 
+    for(var service of this.tarifServ){//Pour chaque service
+      var serv={name:service.name,criteres:<any>[]};
+
+      for(var crit of service.criteres){//Pour chaque critere
+        var critare={name:crit.name,inputs:<any>[]};
+
+        for(var inp of crit.inputs){//Pour chaque input
+          var input={name:inp.name,value:inp.value};//On renseigne juste le name et la value
+
+          critare.inputs.push(input);
+        }
+
+        serv.criteres.push(critare);
+      }
+      
+      json.push(serv);
+    }
+
+    //console.log(json);
+    console.log(JSON.stringify(json));
+  }
+
+
+  getFontSize(lgth:number):number{
+    var res:number=(1.2/Math.pow(lgth/6,0.15))
+    return res;
+  }
 }
-
-/*
-SAVE DE L ANCIENNE VERSION _ _
-                           |-|
-<div class="rootDiv">
-    <div class="tarifDiv">
-        <p class="title">Tarifs</p>
-        <div class="inputContainer">
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Garderie (Matin)</mat-label>
-                <input type="number" name="garderieMatin" min="0" matInput />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Cantine</mat-label>
-                <input type="number" name="cantine" min="0" matInput />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Garderie (Soir)</mat-label>
-                <input type="number" name="garderieSoir" min="0" matInput />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="inputDiv">
-                <mat-label>Centre de loisirs</mat-label>
-                <input type="number" name="centreDeLoisir" min="0" matInput />
-            </mat-form-field>
-
-        </div>
-
-        <button mat-raised-button class="submitBut">
-            Valider
-        </button>
-    </div>
-</div>
-*/

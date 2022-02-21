@@ -1,9 +1,9 @@
-<div class="enfants">
-  <mat-selection-list class="list" [multiple]="false">
+<mat-card>
+  <mat-selection-list [multiple]="false">
       <mat-list-option *ngFor="let child of list" [value]="child" (click)="getListOfChildren(child.id)">
         {{child.name}}
         <mat-divider></mat-divider>
       </mat-list-option>
       <mat-list-option (click)="createChild()">+</mat-list-option>
   </mat-selection-list>
-</div>
+</mat-card>

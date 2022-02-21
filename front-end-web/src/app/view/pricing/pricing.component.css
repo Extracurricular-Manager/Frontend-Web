@@ -24,10 +24,13 @@
 }
 .criterName{
     margin-right:8px;
-    text-align: justify;
-    font-size: 1.2em;
-    max-width:7em;
+    text-align: left;
+    line-height: 1;
     display: inline-block;
+}
+.criterNameDiv{
+    display: inline-block;
+    width:6em;
 }
 .inputDiv{
     /*width: 220px;*/
@@ -49,4 +52,8 @@
     width: 220px;
     height: 2.5em;
     font-size: 1.2em;
+}
+
+.serviceDiv{
+    margin: 10px 0;
 }

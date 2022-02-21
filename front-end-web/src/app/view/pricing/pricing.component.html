@@ -1,17 +1,19 @@
 <div class="rootDiv">
-    <div class="tarifDiv">
+    <mat-card>
         <p class="title">Tarifs</p>
         <div class="inputContainer">
 
-            <div *ngFor="let service of tarifServ">
+            <div *ngFor="let service of tarifServ" class="serviceDiv">
                 <div class="serviceName">
                     {{service.name}}
                 </div>
                 <ul>
                     <li *ngFor="let critere of service.criteres">
-                        <p class="criterName">
-                            {{critere.name}}
-                        </p>
+                        <div class="criterNameDiv">
+                            <p class="criterName" [ngStyle]="{ 'font-size': getFontSize(critere.name.length).toString()+'em'}">
+                                {{critere.name}}
+                            </p>
+                        </div>
                         <div *ngFor="let item of critere.inputs" class="inputDiv">
 
                             <span *ngIf="item.name=='prix'">:</span>
@@ -27,16 +29,16 @@
                                 </ng-template>
 
                                 <ng-template #inputList>
-                                    <input [attr.list]="item.name" [value]="item.value" (mousedown)="resetInput($event)" (touchstart)="resetInput($event)" matInput />
-                                    <!--(mousedown)="resetInput($event)" (touchstart)="resetInput($event)"-->
+                                    <input [attr.list]="item.name" [value]="item.value" (mousedown)="resetInput($event)" (touchstart)="resetInput($event)"
+                                        (blur)="unfocusInput($event)" matInput />
                                     <datalist id="{{item.name}}">
                                         <option *ngFor="let valeur of item.valPos" [value]="valeur">
                                     </datalist>
                                 </ng-template>
                             </mat-form-field>
-                            
+
                         </div>
-                       
+
                     </li>
                 </ul>
             </div>
@@ -46,7 +48,7 @@
         <button mat-raised-button class="submitBut" (click)="sendJSON()">
             Valider
         </button>
-    </div>
+    </mat-card>
 </div>
 
 
