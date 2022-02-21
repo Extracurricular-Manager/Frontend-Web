@@ -13,6 +13,7 @@ import { BillingViewComponent } from './billing-view/billing-view.component';
 import { SettingsViewComponent } from './settings-view/settings-view.component';
 import { ModulesViewComponent } from './modules-view/modules-view.component';
 import { ClassChildrenViewComponent } from './class-children-view/class-children-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ClassChildrenViewComponent } from './class-children-view/class-children
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
