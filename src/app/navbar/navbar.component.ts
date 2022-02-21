@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  title = 'FrontendDesktop';
+  menuItems = [
+    ["Accueil", "/home"],
+    ["Enfants", "/children"],
+    ["Tarifs", "/billing"],
+    ["Facturation", "/pricing"],
+    ["Services", "/modules"],
+
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
