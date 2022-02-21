@@ -14,6 +14,8 @@ import { SettingsViewComponent } from './settings-view/settings-view.component';
 import { ModulesViewComponent } from './modules-view/modules-view.component';
 import { ClassChildrenViewComponent } from './class-children-view/class-children-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
