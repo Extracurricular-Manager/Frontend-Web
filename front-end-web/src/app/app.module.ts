@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateChildComponent } from './components/children-list/create-child/create-child.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatIconModule,
     HttpClientModule,
     MatDialogModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

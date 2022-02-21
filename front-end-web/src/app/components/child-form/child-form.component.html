@@ -1,5 +1,5 @@
-<div class="container">
-    <mat-card>
+<div class="container" style="display: inline-block">
+    <mat-card style="display: inline-block">
         <h2>{{child.name}} {{child.surname}}</h2>
         <h3>Informations</h3>
         <mat-divider></mat-divider>
@@ -17,7 +17,7 @@
 
         <mat-card>
             <h2>Profile</h2>
-            <div class="fields">
+            <div class="fields" style="display: inline-block">
                 <div class="fields-left">
                     <div>
                         <h4>Prénom</h4>
@@ -65,7 +65,9 @@
                     </div>
                 </div>
             </div>
-            <button class="button">Enregistrer</button>
+          <button mat-raised-button color="primary">
+            Enregistrer
+          </button>
         </mat-card>
     </mat-card>
 </div>

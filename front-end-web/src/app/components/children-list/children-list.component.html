@@ -1,4 +1,16 @@
 <mat-card>
+  <mat-form-field appearance="fill">
+    <mat-label>Sélectionner une classe</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let truc of classroomList" [value]="truc" (click)="currentClass(truc)">
+        {{truc}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>
+
+
+<mat-card>
   <mat-selection-list [multiple]="false">
       <mat-list-option *ngFor="let child of list" [value]="child" (click)="getListOfChildren(child.id)">
         {{child.name}}

@@ -11,7 +11,8 @@ import {BillingComponent} from "./view/billing/billing.component";
 const routes: Routes = [
   { path:'', component: LoginComponent },
   { path:'main',component:NavbarComponent },
-  { path:'billing', component:BillingComponent}
+  { path:'billing', component:BillingComponent},
+  { path:'children', component:ChildrenPageComponent}
 ];
 
 @NgModule({
