@@ -1,1 +1,10 @@
-<p>navbar works!</p>
+<mat-toolbar>
+    
+    <span><img id='logo' src="../../assets/favicon.png" /></span>
+
+    <button mat-button routerLink="/menu">Accueil</button>
+    <span class="flexExpand"></span>
+    <button mat-button [routerLink]="['/profile']">
+        <img id='account' src="./assets/icons/account_circle_black_24dp.svg" />
+    </button>
+</mat-toolbar>
