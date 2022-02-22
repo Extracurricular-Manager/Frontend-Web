@@ -1,0 +1,71 @@
+ <mat-card>
+        <h2>{{child.name}} {{child.surname}}</h2>
+        <h3>Informations</h3>
+        <mat-divider></mat-divider>
+
+        <div class="amount-missing">
+            <div class="amounts">
+                <h4 class="amount">Montant dû cette semaine : {{weekAmount}}€</h4>
+                <h4 class="amount">Montant dû ce mois-ci : {{monthAmount}}€</h4>
+            </div>
+
+            <div class="missing">
+                <h4 class="amount">Montant dû au total : {{totalAmount}}€</h4>
+            </div>
+        </div>
+
+        <mat-card>
+            <h2>Profile</h2>
+            <div class="fields" style="display: inline-block">
+                <div class="fields-left">
+                    <div>
+                        <h4>Prénom</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Prénom</mat-label>
+                            <input matInput value="{{child.name}}">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h4>Nom</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nom</mat-label>
+                            <input matInput value="{{child.surname}}">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h4>Classe</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Classe</mat-label>
+                            <input matInput value="{{child.classroom.name}}">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="fields-right">
+                    <div>
+                        <h4>Régime alimentaire</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Régime alimentaire</mat-label>
+                            <input matInput value="{{child.diet.name}}">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h4>Allergies</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Allergies</mat-label>
+                            <input matInput value="{{child.diet.name}}">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h4>Revenus du foyer</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Revenus du foyer</mat-label>
+                            <input matInput value="">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <button mat-raised-button color="primary">
+                Enregistrer
+            </button>
+        </mat-card>
+    </mat-card>
