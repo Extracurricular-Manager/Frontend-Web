@@ -11,6 +11,10 @@ body{
   margin:0; //ne SURTOUT pas supprimer
 }
 
+* {
+  font-family: sans-serif;
+}
+
 $fontConfig: (
         display-4: mat.define-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
         display-3: mat.define-typography-level(56px, 56px, 400, 'Roboto', -0.0089em),
@@ -310,3 +314,4 @@ $altTheme: (
 .low-margin{
   margin-block:4px
 }
+
