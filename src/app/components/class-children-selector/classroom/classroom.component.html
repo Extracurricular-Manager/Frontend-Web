@@ -1,0 +1,9 @@
+
+     <mat-form-field appearance="fill">
+         <mat-label>Classe</mat-label>
+         <mat-select>
+             <mat-option *ngFor="let truc of ['bonjour','hello']" [value]="truc">
+                 {{truc}}
+             </mat-option>
+         </mat-select>
+     </mat-form-field>

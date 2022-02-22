@@ -84,35 +84,6 @@ $mat-dark-theme-foreground: (
 );
 
 // Background config
-// Dark bg
-$dark-background:     #2c2c2c;
-$dark-bg-lighter-5:   lighten($dark-background, 5%);
-$dark-bg-lighter-10:  lighten($dark-background, 10%);
-$dark-bg-lighter-20:  lighten($dark-background, 20%);
-$dark-bg-lighter-30:  lighten($dark-background, 30%);
-$light-bg-alpha-4:    rgba(#fafafa, 0.04);
-$light-bg-alpha-12:   rgba(#fafafa, 0.12);
-
-// Background palette for dark themes.
-$mat-dark-theme-background: (
-        background:               $dark-background,
-        status-bar:               $dark-bg-lighter-20,
-        app-bar:                  $dark-bg-lighter-5,
-        hover:                    $light-bg-alpha-4,
-        card:                     $dark-bg-lighter-5,
-        dialog:                   $dark-bg-lighter-5,
-        tooltip:                  $dark-bg-lighter-20,
-        disabled-button:          $light-bg-alpha-12,
-        raised-button:            $dark-bg-lighter-5,
-        focused-button:           $light-focused,
-        selected-button:          $dark-bg-lighter-20,
-        selected-disabled-button: $dark-bg-lighter-30,
-        disabled-button-toggle:   $dark-bg-lighter-10,
-        unselected-chip:          $dark-bg-lighter-20,
-        disabled-list-option:     $dark-bg-lighter-10,
-);
-
-
 // Light bg
 $light-background:    #fafafa;
 $light-bg-darker-5:   darken($light-background, 5%);
@@ -142,6 +113,33 @@ $mat-light-theme-background: (
         disabled-list-option:     $light-bg-darker-10,
 );
 
+// Dark bg
+$dark-background:     #2c2c2c;
+$dark-bg-lighter-5:   lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+        background:               $dark-background,
+        status-bar:               $dark-bg-lighter-20,
+        app-bar:                  $dark-bg-lighter-5,
+        hover:                    $light-bg-alpha-4,
+        card:                     $dark-bg-lighter-5,
+        dialog:                   $dark-bg-lighter-5,
+        tooltip:                  $dark-bg-lighter-20,
+        disabled-button:          $light-bg-alpha-12,
+        raised-button:            $dark-bg-lighter-5,
+        focused-button:           $light-focused,
+        selected-button:          $dark-bg-lighter-20,
+        selected-disabled-button: $dark-bg-lighter-30,
+        disabled-button-toggle:   $dark-bg-lighter-10,
+        unselected-chip:          $dark-bg-lighter-20,
+        disabled-list-option:     $dark-bg-lighter-10,
+);
 
 // Compute font config
 @include mat.core($fontConfig);
@@ -219,16 +217,16 @@ $theme: (
         accent: $theme-accent,
         warn: $theme-warn,
         is-dark: true,
-        foreground: $mat-light-theme-foreground,
-        background: $mat-light-theme-background,
+        foreground: $mat-dark-theme-foreground,
+        background: $mat-dark-theme-background,
 );
 $altTheme: (
         primary: $theme-primary,
         accent: $theme-accent,
         warn: $theme-warn,
         is-dark: false,
-        foreground: $mat-dark-theme-foreground,
-        background: $mat-dark-theme-background,
+        foreground: $mat-light-theme-foreground,
+        background: $mat-light-theme-background,
 );
 
 // Theme Init
@@ -255,21 +253,7 @@ $altTheme: (
 
 .material-icons {
   font-size: 24px;
-  font-family: 'Material Icons', 'Material Icons',sans-serif;
+  font-family: 'Material Icons', 'Material Icons',serif;
   .mat-badge-content {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', serif;
   }}
-
-.fit-content{
-  display: inline-block;
-}
-
-.split{
-  display: flex;
-  gap: 10px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  align-content: stretch;
-}
