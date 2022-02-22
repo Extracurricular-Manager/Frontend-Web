@@ -273,3 +273,40 @@ $altTheme: (
   align-items: stretch;
   align-content: stretch;
 }
+
+.full-size{
+  height: 100%;
+}
+
+.alignment-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap:10px;
+  align-items: center;
+}
+
+.display-in-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.display-in-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap:20px;
+}
+
+.outline {
+  border-style: solid;
+  border-width: thin;
+}
+
+
+.low-margin{
+  margin-block:4px
+}

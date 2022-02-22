@@ -29,6 +29,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -45,24 +46,25 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     ClassChildrenViewComponent,
     ChildDetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
 
-    //Imports angular material
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatDividerModule,
-    MatInputModule,
-    MatListModule,
-    ScrollingModule,
-    MatSidenavModule
-  ],
+        //Imports angular material
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatDividerModule,
+        MatInputModule,
+        MatListModule,
+        ScrollingModule,
+        MatSidenavModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

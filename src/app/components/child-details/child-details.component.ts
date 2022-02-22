@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildDetailsComponent implements OnInit {
   child = {
-    "name":"",
-    "surname":"",
+    "name":"marc",
+    "surname":"michel",
     "classroom":{
       "name":""
     },
