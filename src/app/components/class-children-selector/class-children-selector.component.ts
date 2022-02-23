@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./class-children-selector.component.scss']
 })
 export class ClassChildrenSelectorComponent implements OnInit {
+  showAdelphie= false;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
