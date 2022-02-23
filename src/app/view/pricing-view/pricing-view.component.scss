@@ -1,0 +1,53 @@
+.rootDiv{
+    width:100%;
+    margin: auto;
+    text-align: center;
+}
+.rootDiv mat-card{
+    box-shadow: none!important;
+}
+
+.title{
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.serviceName{
+    font-size: 1.6em;
+}
+.criterName{
+    margin-right:8px;
+    text-align: left;
+    line-height: 1;
+    display: inline-block;
+}
+.criterNameDiv{
+    display: inline-block;
+    width:6em;
+}
+.inputDiv{
+    /*width: 220px;*/
+    display: inline-block;
+}
+.inputForm{
+    margin:0 5px;
+    width:9em;
+}
+.inputContainer{
+    width: fit-content;
+    margin: auto;
+    padding: 0 20px;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.submitBut{
+    width: 220px;
+    height: 2.5em;
+    font-size: 1.2em;
+}
+
+.serviceDiv{
+    margin: 10px 0;
+}

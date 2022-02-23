@@ -11,8 +11,8 @@ export class NavbarComponent implements OnInit {
   menuItems = [
     ["Accueil", "/home"],
     ["Enfants", "/children"],
-    ["Tarifs", "/billing"],
-    ["Facturation", "/pricing"],
+    ["Tarifs", "/pricing"],
+    ["Facturation", "/billing"],
     ["Services", "/modules"],
 
   ]
