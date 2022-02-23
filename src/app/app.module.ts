@@ -32,6 +32,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginViewComponent } from './view/login-view/login-view.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {LoggedInChecker} from "./logged-in-checker";
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import { LoginViewComponent } from './view/login-view/login-view.component';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-
+        HttpClientModule,
         //Imports angular material
         MatToolbarModule,
         MatButtonModule,
@@ -70,7 +72,9 @@ import { LoginViewComponent } from './view/login-view/login-view.component';
         MatButtonToggleModule,
         ReactiveFormsModule
     ],
-  providers: [],
+  providers: [
+      LoggedInChecker
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -26,4 +26,8 @@ export class BillingViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  apu(){
+    localStorage.removeItem('token')
+  }
+
 }

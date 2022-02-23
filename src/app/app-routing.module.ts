@@ -8,15 +8,16 @@ import { PricingViewComponent } from './view/pricing-view/pricing-view.component
 import { SettingsViewComponent } from './view/settings-view/settings-view.component';
 import { ModulesViewComponent } from './view/modules-view/modules-view.component';
 import {LoginViewComponent} from "./view/login-view/login-view.component";
+import {LoggedInChecker} from "./logged-in-checker";
 
 const routes: Routes = [
-  {path: 'modules', component:ModulesViewComponent},
-  {path: 'settings', component:SettingsViewComponent},
-  {path: 'billing', component:BillingViewComponent},
-  {path: 'pricing', component:PricingViewComponent},
-  {path: 'children', component:ClassChildrenViewComponent},
-  {path: 'home', component:DashboardViewComponent},
-  { path: 'login', component:LoginViewComponent },
+  {path: 'modules', component:ModulesViewComponent, canActivate:[LoggedInChecker]},
+  {path: 'settings', component:SettingsViewComponent, canActivate:[LoggedInChecker]},
+  {path: 'billing', component:BillingViewComponent,canActivate:[LoggedInChecker]},
+  {path: 'pricing', component:PricingViewComponent, canActivate:[LoggedInChecker]},
+  {path: 'children', component:ClassChildrenViewComponent, canActivate:[LoggedInChecker]},
+  {path: 'home', component:DashboardViewComponent, canActivate:[LoggedInChecker]},
+  {path: 'login', component:LoginViewComponent },
   {path: '', redirectTo:'home', pathMatch:'full'},
 ];
 

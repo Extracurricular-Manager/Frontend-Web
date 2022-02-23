@@ -18,7 +18,7 @@ export class LoginViewComponent implements OnInit {
   }
 
   loginAction(){
-    this.api.login(this.uname.value,this.password.value)
+    this.api.login(this.uname.value,this.password.value,"/home").add()
   }
 
 }
