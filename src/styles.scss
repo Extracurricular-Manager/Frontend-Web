@@ -264,7 +264,7 @@ $altTheme: (
     font-family: 'Roboto', sans-serif;
   }}
 
-.fit-content{
+.fit-to-content{
   display: inline-block;
 }
 
@@ -315,3 +315,28 @@ $altTheme: (
   margin-block:4px
 }
 
+.small{
+  width:300px
+}
+
+
+.centered{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+
+}
+
+.top-margin{
+  margin-top:50px;
+}
+
+
+.pimped-card{
+  padding:2%
+}

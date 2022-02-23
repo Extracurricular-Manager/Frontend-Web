@@ -29,8 +29,9 @@ import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {FormsModule} from "@angular/forms";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginViewComponent } from './view/login-view/login-view.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     SettingsViewComponent,
     ModulesViewComponent,
     ClassChildrenViewComponent,
-    ChildDetailsComponent
+    ChildDetailsComponent,
+    LoginViewComponent
   ],
     imports: [
         BrowserModule,
@@ -65,7 +67,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
         ScrollingModule,
         MatSidenavModule,
         FormsModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

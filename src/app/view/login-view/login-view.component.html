@@ -1,0 +1,25 @@
+<!--
+
+Fond vert classique
+Carte avec 2 champs
+un bouton c'est tout
+
+-->
+
+<div class="centered">
+    <mat-card class="pimped-card fit-to-content top-margin mat-elevation-z9">
+        <h2>Connexion </h2>
+        <div class="display-in-column">
+            <mat-form-field appearance="fill">
+                <mat-label>Identifant</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="uname" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput [formControl]="password" required>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary">Se connecter</button>
+
+    </mat-card>
+</div>

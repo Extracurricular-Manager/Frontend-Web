@@ -1,1 +1,52 @@
-<p>pricing-view works!</p>
+<div class="rootDiv">
+    <mat-card>
+        <p class="title">Tarifs</p>
+        <div class="inputContainer">
+
+            <div *ngFor="let service of tarifServ;let indServ=index;" class="serviceDiv">
+                <div class="serviceName">
+                    {{service.name}}
+                </div>
+                <ul>
+                    <li *ngFor="let critere of service.criteres;let indCrit=index;">
+                        <div class="criterNameDiv">
+                            <p class="criterName" [ngStyle]="{ 'font-size': getFontSize(critere.name.length).toString()+'em'}">
+                                {{critere.name}}
+                            </p>
+                        </div>
+                        <div *ngFor="let item of critere.inputs;let indInp=index;" class="inputDiv">
+
+                            <span *ngIf="item.name=='prix'">:</span>
+                            <span *ngIf="item.name=='tranche'">/</span>
+
+                            <mat-form-field appearance="fill" class="inputForm">
+                                <mat-label>{{item.name}}</mat-label>
+
+                                <ng-container *ngIf="item.type=='list'; then inputList; else inputOther"></ng-container>
+
+                                <ng-template #inputOther>
+                                    <input type="{{item.type}}" step="{{item.step}}" min="0" value="{{item.value}}" matInput />
+                                </ng-template>
+
+                                <ng-template #inputList>
+                                    <mat-select [(value)]="item.value">
+                                        <mat-option *ngFor="let valeur of item.valPos" [value]="valeur">
+                                            {{ valeur }}
+                                        </mat-option>
+                                    </mat-select>
+                                </ng-template>
+                            </mat-form-field>
+
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <button mat-raised-button class="submitBut" (click)="sendJSON()">
+            Valider
+        </button>
+    </mat-card>
+</div>

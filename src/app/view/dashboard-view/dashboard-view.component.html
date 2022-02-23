@@ -1,1 +1,26 @@
-<p>dashboard-view works!</p>
+<div class="container">
+
+    <mat-card class="home-card-access">
+        <mat-card-title>Accès rapide</mat-card-title>
+    </mat-card>
+
+    <div class="title">Tableau de bord</div>
+    <div>
+        <div class="material-icons md-dark md-inactive">update</div>
+        <h6 class="undertitle"> 35 minutes</h6>
+    
+    </div>
+    <div class="home-card">
+        <mat-card>
+            <mat-card-title (click)="route('children')">Élèves</mat-card-title>
+            <mat-card-content></mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="home-card">
+        <mat-card>
+            <mat-card-title >Statistiques</mat-card-title>
+            <mat-card-content></mat-card-content>
+           
+        </mat-card>
+    </div>
