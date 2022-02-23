@@ -30,6 +30,7 @@ import {MatListModule} from "@angular/material/list";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {FormsModule} from "@angular/forms";
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {FormsModule} from "@angular/forms";
         MatListModule,
         ScrollingModule,
         MatSidenavModule,
-        FormsModule
+        FormsModule,
+        MatButtonToggleModule
     ],
   providers: [],
   bootstrap: [AppComponent]

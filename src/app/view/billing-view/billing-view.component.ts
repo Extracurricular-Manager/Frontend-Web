@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillingViewComponent implements OnInit {
 
+  child = {
+    "name":"marc",
+    "surname":"michel",
+    "classroom":{
+      "name":""
+    },
+    diet:{
+      "name":""
+    }
+  };
+  weekAmount: any;
+  monthAmount: any;
+  totalAmount: any;
+
   constructor() { }
 
   ngOnInit(): void {

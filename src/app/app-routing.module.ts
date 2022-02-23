@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ChildrenComponent} from "./components/class-children-selector/children/children.component";
-import {BillingViewComponent} from "./view/billing-view/billing-view.component";
+import { ChildrenComponent } from "./components/class-children-selector/children/children.component";
+import { BillingViewComponent } from "./view/billing-view/billing-view.component";
 import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
 import { ClassChildrenViewComponent } from './view/class-children-view/class-children-view.component';
 import { PricingViewComponent } from './view/pricing-view/pricing-view.component';

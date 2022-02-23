@@ -1,53 +1,53 @@
- <mat-card class="fit-content">
-        <h1 class="low-margin">{{[child.name]}} {{child.surname}}</h1>
+<mat-card class="fit-content">
+    <h1 class="low-margin">{{[child.name]}} {{child.surname}}</h1>
 
-     <div class="alignment-row low-margin">
-         <div>Montant dû </div>
-         <mat-divider vertical style="height:50px"></mat-divider>
-         <div>
-             <p class="low-margin">cette semaine : {{weekAmount}}€</p>
-             <p class="low-margin">ce mois-ci : {{monthAmount}}€</p>
-             <p class="low-margin">au total : {{totalAmount}}€</p>
-         </div>
-     </div>
+    <div class="alignment-row low-margin">
+        <div>Montant dû </div>
+        <mat-divider vertical style="height:50px"></mat-divider>
+        <div>
+            <p class="low-margin">cette semaine : {{weekAmount}}€</p>
+            <p class="low-margin">ce mois-ci : {{monthAmount}}€</p>
+            <p class="low-margin">au total : {{totalAmount}}€</p>
+        </div>
+    </div>
 
 
-     <mat-card class="fit-content">
-         <h2 style="padding-top: 4px">Profil</h2>
+    <mat-card class="fit-content">
+        <h2 style="padding-top: 4px">Profil</h2>
 
-         <div class="display-in-row fit-content">
-             <div class="display-in-column fit-content">
-                     <mat-form-field appearance="fill">
-                         <mat-label>Prénom</mat-label>
-                         <input matInput [(ngModel)]="child.name">
-                     </mat-form-field>
-                     <mat-form-field appearance="fill">
-                         <mat-label>Nom</mat-label>
-                         <input matInput [(ngModel)]="child.surname">
-                     </mat-form-field>
-                     <mat-form-field appearance="fill">
-                         <mat-label>Classe</mat-label>
-                         <input matInput [(ngModel)]="child.classroom.name">
-                     </mat-form-field>
-             </div>
-             <div class="display-in-column fit-content">
+        <div class="display-in-row fit-content">
+            <div class="display-in-column fit-content">
+                <mat-form-field appearance="fill">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput [(ngModel)]="child.name">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nom</mat-label>
+                    <input matInput [(ngModel)]="child.surname">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Classe</mat-label>
+                    <input matInput [(ngModel)]="child.classroom.name">
+                </mat-form-field>
+            </div>
+            <div class="display-in-column fit-content">
 
-                     <mat-form-field appearance="fill">
-                         <mat-label>Régime alimentaire</mat-label>
-                         <input matInput value="{{child.diet.name}}">
-                     </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Régime alimentaire</mat-label>
+                    <input matInput value="{{child.diet.name}}">
+                </mat-form-field>
 
-                     <mat-form-field appearance="fill">
-                         <mat-label>Allergies</mat-label>
-                         <input matInput value="{{child.diet.name}}">
-                     </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Allergies</mat-label>
+                    <input matInput value="{{child.diet.name}}">
+                </mat-form-field>
 
-                     <mat-form-field appearance="fill">
-                         <mat-label>Revenus du foyer</mat-label>
-                         <input matInput value="">
-                     </mat-form-field>
-                 </div>
-             </div>
-         <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>
-     </mat-card>
+                <mat-form-field appearance="fill">
+                    <mat-label>Revenus du foyer</mat-label>
+                    <input matInput value="">
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>
     </mat-card>
+</mat-card>
