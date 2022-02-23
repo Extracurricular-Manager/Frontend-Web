@@ -7,6 +7,7 @@ import { ClassChildrenViewComponent } from './view/class-children-view/class-chi
 import { PricingViewComponent } from './view/pricing-view/pricing-view.component';
 import { SettingsViewComponent } from './view/settings-view/settings-view.component';
 import { ModulesViewComponent } from './view/modules-view/modules-view.component';
+import {LoginViewComponent} from "./view/login-view/login-view.component";
 
 const routes: Routes = [
   {path: 'modules', component:ModulesViewComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'pricing', component:PricingViewComponent},
   {path: 'children', component:ClassChildrenViewComponent},
   {path: 'home', component:DashboardViewComponent},
+  { path: 'login', component:LoginViewComponent },
   {path: '', redirectTo:'home', pathMatch:'full'},
 ];
 

@@ -29,7 +29,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginViewComponent } from './view/login-view/login-view.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {FormsModule} from "@angular/forms";
     SettingsViewComponent,
     ModulesViewComponent,
     ClassChildrenViewComponent,
-    ChildDetailsComponent
+    ChildDetailsComponent,
+    LoginViewComponent
   ],
     imports: [
         BrowserModule,
@@ -63,7 +65,8 @@ import {FormsModule} from "@angular/forms";
         MatListModule,
         ScrollingModule,
         MatSidenavModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
