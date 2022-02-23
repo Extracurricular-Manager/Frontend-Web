@@ -3,18 +3,18 @@
         <p class="title">Tarifs</p>
         <div class="inputContainer">
 
-            <div *ngFor="let service of tarifServ" class="serviceDiv">
+            <div *ngFor="let service of tarifServ;let indServ=index;" class="serviceDiv">
                 <div class="serviceName">
                     {{service.name}}
                 </div>
                 <ul>
-                    <li *ngFor="let critere of service.criteres">
+                    <li *ngFor="let critere of service.criteres;let indCrit=index;">
                         <div class="criterNameDiv">
                             <p class="criterName" [ngStyle]="{ 'font-size': getFontSize(critere.name.length).toString()+'em'}">
                                 {{critere.name}}
                             </p>
                         </div>
-                        <div *ngFor="let item of critere.inputs" class="inputDiv">
+                        <div *ngFor="let item of critere.inputs;let indInp=index;" class="inputDiv">
 
                             <span *ngIf="item.name=='prix'">:</span>
                             <span *ngIf="item.name=='tranche'">/</span>
@@ -29,11 +29,11 @@
                                 </ng-template>
 
                                 <ng-template #inputList>
-                                    <input [attr.list]="item.name" [value]="item.value" (mousedown)="resetInput($event)" (touchstart)="resetInput($event)"
-                                        (blur)="unfocusInput($event)" matInput />
-                                    <datalist id="{{item.name}}">
-                                        <option *ngFor="let valeur of item.valPos" [value]="valeur">
-                                    </datalist>
+                                    <mat-select [(value)]="item.value">
+                                        <mat-option *ngFor="let valeur of item.valPos" [value]="valeur">
+                                            {{ valeur }}
+                                        </mat-option>
+                                    </mat-select>
                                 </ng-template>
                             </mat-form-field>
 

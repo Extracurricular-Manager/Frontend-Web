@@ -50,7 +50,7 @@ export class PricingViewComponent implements AfterViewInit {
           }else{//type est une liste de valeur possible
             inp.type="list";
             inp.valPos=input["type"];
-            console.log(inp.valPos);
+            //console.log(inp.valPos);
           }
           //TYPE
 
@@ -63,29 +63,6 @@ export class PricingViewComponent implements AfterViewInit {
       this.tarifServ.push(serv);
     }
   }
-
-  resetInput(e:Event){
-    if(e.target){
-      var input:HTMLInputElement=<HTMLInputElement>e.target;//cast
-      if(input!=null){
-        input.setAttribute("lastVal",input.value);
-        input.value="";
-      }
-    }
-  }
-
-  unfocusInput(e:Event){
-    if(e.target){
-      var input:HTMLInputElement=<HTMLInputElement>e.target;//cast
-      if(input!=null){
-        var v=input.getAttribute("lastVal");
-        if(input.value=="" && v!=null){
-          input.value=v;
-        }
-      }
-    }
-  }
-
   
   //create a json with given data and sent it
   sendJSON(){

@@ -29,6 +29,7 @@
 .inputDiv{
     /*width: 220px;*/
     display: inline-block;
+    height: fit-content;
 }
 .inputForm{
     margin:0 5px;
@@ -50,4 +51,8 @@
 
 .serviceDiv{
     margin: 10px 0;
+}
+
+.serviceDiv ul li * {
+    //vertical-align: middle;//UGLY
 }
