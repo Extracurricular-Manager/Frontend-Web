@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Child} from "../../../api/data/child";
 
 @Component({
   selector: 'app-class-children-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassChildrenViewComponent implements OnInit {
 
+  val: Child | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setName(val:any){
+    this.val = val
+    console.log(val)
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { CanActivate, Router } from "@angular/router";
-import {ApiService} from "./api.service";
+import {ApiService} from "../api/api.service";
 
 @Injectable()
 export class LoggedInChecker implements CanActivate {

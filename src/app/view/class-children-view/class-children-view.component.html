@@ -1,4 +1,4 @@
 <div class="split">
-        <app-class-children-selector></app-class-children-selector>
-        <app-child-details></app-child-details>
+        <app-class-children-selector (currdata) = "this.val" (data)="this.val = $event"></app-class-children-selector>
+        <app-child-details [child]=(this.val) (childNameUpdater)="this.val = $event"></app-child-details>
 </div>

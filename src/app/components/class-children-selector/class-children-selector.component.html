@@ -8,6 +8,6 @@
     </div>
 
     <app-classroom [hidden]="showAdelphie" class="fit-content"></app-classroom>
-    <app-children></app-children>
+    <app-children [itemsList]= "childrenList" (chold)="this.data.emit($event)"></app-children>
 
 </mat-card>
