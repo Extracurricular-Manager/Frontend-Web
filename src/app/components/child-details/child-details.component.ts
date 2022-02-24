@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Child} from "../../../api/data/child";
 
 @Component({
   selector: 'app-child-details',
@@ -6,22 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child-details.component.scss']
 })
 export class ChildDetailsComponent implements OnInit {
-  child = {
-    "name":"marc",
-    "surname":"michel",
-    "classroom":{
-      "name":""
-    },
-    diet:{
-      "name":""
-    }
-  };
+  @Input() child : Child | undefined;
+  @Output() childNameUpdater = new EventEmitter<any>();
   weekAmount: any;
   monthAmount: any;
   totalAmount: any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  update(nval:any){
+    this.childNameUpdater.emit(nval)
   }
 
 }

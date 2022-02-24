@@ -1,4 +1,4 @@
-<mat-card class="fit-content">
+<mat-card class="fit-content" *ngIf="child" >
     <h1 class="low-margin">{{[child.name]}} {{child.surname}}</h1>
 
     <div class="alignment-row low-margin">
@@ -19,7 +19,7 @@
             <div class="display-in-column fit-content">
                 <mat-form-field appearance="fill">
                     <mat-label>Prénom</mat-label>
-                    <input matInput [(ngModel)]="child.name">
+                    <input matInput [(ngModel)]="child.name" (keyup)="update(child)">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Nom</mat-label>
@@ -27,19 +27,19 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Classe</mat-label>
-                    <input matInput [(ngModel)]="child.classroom.name">
+                    <input matInput [(ngModel)]="child.classroom!.name">
                 </mat-form-field>
             </div>
             <div class="display-in-column fit-content">
 
                 <mat-form-field appearance="fill">
                     <mat-label>Régime alimentaire</mat-label>
-                    <input matInput value="{{child.diet.name}}">
+                    <input matInput value="{{child.diets}}">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Allergies</mat-label>
-                    <input matInput value="{{child.diet.name}}">
+                    <input matInput value="{{child.diets}}">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">

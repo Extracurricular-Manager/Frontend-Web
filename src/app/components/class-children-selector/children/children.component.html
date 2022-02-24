@@ -1,7 +1,8 @@
 <cdk-virtual-scroll-viewport itemSize="17" style="height: 500px" >
+
     <mat-selection-list [multiple]="false">
-    <mat-list-option *cdkVirtualFor="let child of ['michel','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean','jean']" [value]="child" > <!--(click)="getListOfChildren(child.id)"-->
-        {{child}}
+    <mat-list-option *cdkVirtualFor="let child of itemsList" (click)="chold.emit(child)">
+        {{child.surname}} {{child.name}}
         <mat-divider></mat-divider>
     </mat-list-option>
     <mat-list-option>+</mat-list-option>
