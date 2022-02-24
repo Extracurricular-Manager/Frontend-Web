@@ -1,0 +1,29 @@
+$navBarHeight:64px;
+
+
+mat-sidenav-container{
+    min-height: calc(100vh - $navBarHeight);
+}
+mat-sidenav-content{
+    min-height: calc(100vh - $navBarHeight);
+}
+.contenair{
+    padding: 20px 30px;
+}
+
+mat-sidenav{
+    width:240px;
+}
+
+mat-sidenav mat-card{
+    margin:5px;
+}
+
+
+.toggleButton{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+}
