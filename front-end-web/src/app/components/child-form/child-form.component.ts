@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Child } from 'src/app/objects/child';
-import { ChildService } from 'src/app/service/child-service.service';
+import { ChildService } from 'src/app/service/child.service';
 import SampleJson from '../../../../examples/child.json';
 
 @Component({

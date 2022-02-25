@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Child } from 'src/app/objects/child';
-import { ChildService } from 'src/app/service/child-service.service';
-import { ClassroomService } from 'src/app/service/classroom-service.service';
+import { ChildService } from 'src/app/service/child.service';
+import { ClassroomService } from 'src/app/service/classroom.service';
 import SampleJson from '../../../../examples/child.json';
 import { CreateChildComponent } from './create-child/create-child.component';
 

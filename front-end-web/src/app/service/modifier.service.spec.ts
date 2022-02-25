@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GradeLevelService } from './grade-level-service.service';
+import { ModifierService } from './modifier.service';
 
-describe('GradeLevelService', () => {
-  let service: GradeLevelService;
+describe('ModifierService', () => {
+  let service: ModifierService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GradeLevelService);
+    service = TestBed.inject(ModifierService);
   });
 
   it('should be created', () => {

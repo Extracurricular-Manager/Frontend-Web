@@ -8,7 +8,7 @@ import { Diet } from '../objects/diet';
 })
 export class DietService {
 
-  urlDiet:string="http://localhost:8080/api/diet";
+  urlDiet:string="http://backend:8080/api/diets";
 
   public class=new BehaviorSubject<string>("");
   public currentClass=this.class.asObservable();
@@ -21,7 +21,7 @@ export class DietService {
 
 
   getAll():Observable<Diet[]>{
-      return this.http.get<Diet[]>(this.urlDiet+"s");
+      return this.http.get<Diet[]>(this.urlDiet);
   }
 
   getDiet(id:number):Observable<Diet>{
@@ -29,7 +29,7 @@ export class DietService {
   }
 
   createDiet(c:Diet):Observable<Diet>{
-      return this.http.post<Diet>(this.urlDiet+"/create",c);
+      return this.http.post<Diet>(this.urlDiet,c);
   }
 
   updateDiet(c:Diet,id:number):Observable<Diet>{

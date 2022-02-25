@@ -8,7 +8,7 @@ import { Family } from '../objects/family';
 })
 export class FamilyService {
 
-  urlFamily:string="http://localhost:8080/api/family";
+  urlFamily:string="http://nackend:8080/api/families";
 
   public class=new BehaviorSubject<string>("");
   public currentClass=this.class.asObservable();
@@ -21,7 +21,7 @@ export class FamilyService {
 
 
   getAll():Observable<Family[]>{
-      return this.http.get<Family[]>(this.urlFamily+"ren");
+      return this.http.get<Family[]>(this.urlFamily);
   }
 
   getFamily(id:number):Observable<Family>{
@@ -29,7 +29,7 @@ export class FamilyService {
   }
 
   createFamily(c:Family):Observable<Family>{
-      return this.http.post<Family>(this.urlFamily+"/create",c);
+      return this.http.post<Family>(this.urlFamily,c);
   }
 
   updateFamily(c:Family,id:number):Observable<Family>{

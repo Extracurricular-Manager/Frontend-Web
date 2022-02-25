@@ -13,14 +13,8 @@ export class ClassroomService {
   public currentClassroom=this.classroom.asObservable();
 
 
-  urlClassroom:string="http://localhost:8080/api/classroom";
+  urlClassroom:string="http://backend:8080/api/classrooms";
 
-  optionRequete = {
-    headers: new HttpHeaders({ 
-      'Access-Control-Allow-Origin':'*',
-      'mon-entete-personnalise':'maValeur'
-    })
-  };
 
   public class=new BehaviorSubject<string>("");
   public currentClass=this.class.asObservable();
@@ -37,7 +31,7 @@ export class ClassroomService {
 
 
   getAll():Observable<Classroom[]>{
-      return this.http.get<Classroom[]>(this.urlClassroom+"s",this.optionRequete);
+      return this.http.get<Classroom[]>(this.urlClassroom);
   }
   
 
@@ -53,8 +47,8 @@ export class ClassroomService {
       return this.http.put<Classroom>(this.urlClassroom+"/"+id,c);
   }
 
-  partialUpdateClassroom(c:Classroom,id:number):Observable<Classroom>{
-      return this.http.patch<Classroom>(this.urlClassroom+"/"+id,c);
+  patchClassroom(c:Classroom,id:number):Observable<Classroom>{
+      return this.http.patch<Classroom>(this.urlClassroom,c);
   }
 
   deleteClassroom(id:number):Observable<Classroom>{

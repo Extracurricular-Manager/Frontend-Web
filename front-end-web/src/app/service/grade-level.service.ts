@@ -8,7 +8,7 @@ import { GradeLevel } from '../objects/grade-level';
 })
 export class GradeLevelService {
 
-  urlGradeLevel:string="http://localhost:8080/api/grade-level";
+  urlGradeLevel:string="http://backend:8080/api/grade-levels";
 
   public class=new BehaviorSubject<string>("");
   public currentClass=this.class.asObservable();
@@ -21,7 +21,7 @@ export class GradeLevelService {
 
 
   getAll():Observable<GradeLevel[]>{
-      return this.http.get<GradeLevel[]>(this.urlGradeLevel+"s");
+      return this.http.get<GradeLevel[]>(this.urlGradeLevel);
   }
 
   getGradeLevel(id:number):Observable<GradeLevel>{
@@ -29,7 +29,7 @@ export class GradeLevelService {
   }
 
   createGradeLevel(c:GradeLevel):Observable<GradeLevel>{
-      return this.http.post<GradeLevel>(this.urlGradeLevel+"/create",c);
+      return this.http.post<GradeLevel>(this.urlGradeLevel,c);
   }
 
   updateGradeLevel(c:GradeLevel,id:number):Observable<GradeLevel>{
