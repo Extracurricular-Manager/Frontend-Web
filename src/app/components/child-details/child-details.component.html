@@ -37,12 +37,9 @@
                     <input matInput value="{{child.diets}}">
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Revenus du foyer</mat-label>
-                    <input matInput value="">
-                </mat-form-field>
+                    <app-smart-selector></app-smart-selector>
             </div>
         </div>
-        <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>
+        <button mat-raised-button color="primary" style="width: 100%">{{this.data?"Créer et sélectionner":"Enregistrer"}}</button>
     </mat-card>
 </div>

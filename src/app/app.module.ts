@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {InjectionToken, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +22,7 @@ import { PricingViewComponent } from './view/pricing-view/pricing-view.component
 import { BillingViewComponent } from './view/billing-view/billing-view.component';
 import { SettingsViewComponent } from './view/settings-view/settings-view.component';
 import { LoginViewComponent } from './view/login-view/login-view.component';
-import { ModulesViewComponent } from './view/modules-view/modules-view.component';
+import { ModulesViewComponent} from './view/modules-view/modules-view.component';
 import { ClassChildrenViewComponent } from './view/class-children-view/class-children-view.component';
 
 // Imports angular material
@@ -41,6 +41,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { FamilyDetailsComponent } from './family-details/family-details.component';
+import {MatDialog, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+import {MatTableModule} from "@angular/material/table";
+import { SmartSelectorComponent } from './smart-selector/smart-selector.component';
 
 
 @NgModule({
@@ -62,7 +65,8 @@ import { FamilyDetailsComponent } from './family-details/family-details.componen
     BillingChildrenComponent,
     UsersComponent,
     RolesComponent,
-    FamilyDetailsComponent
+    FamilyDetailsComponent,
+    SmartSelectorComponent
   ],
 
   imports: [
@@ -85,7 +89,9 @@ import { FamilyDetailsComponent } from './family-details/family-details.componen
     MatInputModule,
     MatListModule,
     MatSidenavModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTableModule,
+      MatDialogModule
   ],
 
   providers: [
