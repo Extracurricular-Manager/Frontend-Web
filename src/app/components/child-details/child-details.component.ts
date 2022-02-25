@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Child} from "../../../api/data/child";
+import {ClassroomApiService} from "../../../api/domain-specific/classroom-api.service";
+import {Classroom} from "../../../api/data/classroom";
 
 @Component({
   selector: 'app-child-details',
@@ -9,10 +11,21 @@ import {Child} from "../../../api/data/child";
 export class ChildDetailsComponent implements OnInit {
   @Input() child : Child | undefined;
   @Output() childNameUpdater = new EventEmitter<any>();
-  weekAmount: any;
+
+  classrooms : Classroom[] | undefined
   monthAmount: any;
   totalAmount: any;
-  constructor() { }
+
+  constructor(private classApi:ClassroomApiService) {
+    this.ngOnRefresh()
+  }
+
+  ngOnRefresh(){
+    this.classApi.getAll().subscribe(t=>{
+      console.log(t.body)
+      this.classrooms = t.body as Classroom[]
+    })
+  }
 
   ngOnInit(): void {
   }
@@ -20,5 +33,7 @@ export class ChildDetailsComponent implements OnInit {
   update(nval:any){
     this.childNameUpdater.emit(nval)
   }
+
+
 
 }
