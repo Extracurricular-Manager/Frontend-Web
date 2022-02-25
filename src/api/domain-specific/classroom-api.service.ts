@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Child} from "../data/child";
-import {Family} from "../data/family";
+import {Adelphie} from "../data/adelphie";
 import {ApiService} from "../api.service";
 import {Classroom} from "../data/classroom";
 

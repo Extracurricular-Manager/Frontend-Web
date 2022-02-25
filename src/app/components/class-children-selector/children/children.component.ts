@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Child} from "../../../../api/data/child";
-import {Family} from "../../../../api/data/family";
+import {Adelphie} from "../../../../api/data/adelphie";
 
 @Component({
   selector: 'app-children',
@@ -21,7 +21,7 @@ export class ChildrenComponent implements OnInit {
     this.value = undefined
   }
 
-  displayCorrectName(item : Child | Family){
+  displayCorrectName(item : Child | Adelphie){
     let result =  item.hasOwnProperty("name") ? this.getChildName(item) : this.getFamilyReferentName(item)
     console.log(result)
     return result
@@ -33,7 +33,7 @@ export class ChildrenComponent implements OnInit {
   }
 
 
-  getFamilyReferentName(f : Family){
+  getFamilyReferentName(f : Adelphie){
     return f.referingParentName  + " " + f.referingParentSurname
   }
 

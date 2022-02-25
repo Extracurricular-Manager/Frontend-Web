@@ -1,39 +1,28 @@
 // To parse this data:
 //
-//   import { Convert, Child } from "./file";
+//   import { Convert, Facturation } from "./file";
 //
-//   const child = Convert.toChild(json);
+//   const facturation = Convert.toFacturation(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-import {Classroom} from "./classroom";
-import {Adelphie} from "./adelphie";
-import {GradeLevel} from "./grade-level";
-import {Diet} from "./diet";
-import {Facturation} from "./facturation";
-
-export interface Child {
-    id?:          number;
-    name?:        string;
-    surname?:     string;
-    birthday?:    Date;
-    classroom?:   Classroom;
-    adelphie?:    Adelphie;
-    gradeLevel?:  GradeLevel;
-    diets?:       Diet[];
-    facturation?: Facturation;
+export interface Facturation {
+    id?:            number;
+    schoolService?: string;
+    cost?:          number;
+    payed?:         boolean;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toChild(json: string): Child {
-        return cast(JSON.parse(json), r("Child"));
+    public static toFacturation(json: string): Facturation {
+        return cast(JSON.parse(json), r("Facturation"));
     }
 
-    public static childToJson(value: Child): string {
-        return JSON.stringify(uncast(value, r("Child")), null, 2);
+    public static facturationToJson(value: Facturation): string {
+        return JSON.stringify(uncast(value, r("Facturation")), null, 2);
     }
 }
 
@@ -133,8 +122,8 @@ function transform(val: any, typ: any, getProps: any, key: any = ''): any {
     if (typeof typ === "object") {
         return typ.hasOwnProperty("unionMembers") ? transformUnion(typ.unionMembers, val)
             : typ.hasOwnProperty("arrayItems")    ? transformArray(typ.arrayItems, val)
-            : typ.hasOwnProperty("props")         ? transformObject(getProps(typ), typ.additional, val)
-            : invalidValue(typ, val);
+                : typ.hasOwnProperty("props")         ? transformObject(getProps(typ), typ.additional, val)
+                    : invalidValue(typ, val);
     }
     // Numbers can be parsed by Date but shouldn't be.
     if (typ === Date && typeof val !== "number") return transformDate(val);
@@ -170,42 +159,10 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "Child": o([
-        { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "name", js: "name", typ: u(undefined, "") },
-        { json: "surname", js: "surname", typ: u(undefined, "") },
-        { json: "birthday", js: "birthday", typ: u(undefined, Date) },
-        { json: "classroom", js: "classroom", typ: u(undefined, r("Classroom")) },
-        { json: "adelphie", js: "adelphie", typ: u(undefined, r("Adelphie")) },
-        { json: "gradeLevel", js: "gradeLevel", typ: u(undefined, r("GradeLevel")) },
-        { json: "diets", js: "diets", typ: u(undefined, a(r("Diet"))) },
-        { json: "facturation", js: "facturation", typ: u(undefined, r("Facturation")) },
-    ], false),
-    "Adelphie": o([
-        { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "referingParentName", js: "referingParentName", typ: u(undefined, null) },
-        { json: "referingParentSurname", js: "referingParentSurname", typ: u(undefined, null) },
-        { json: "telephoneNumber", js: "telephoneNumber", typ: u(undefined, null) },
-        { json: "postalAdress", js: "postalAdress", typ: u(undefined, null) },
-    ], false),
-    "Classroom": o([
-        { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "name", js: "name", typ: u(undefined, null) },
-        { json: "professor", js: "professor", typ: u(undefined, null) },
-    ], false),
-    "Diet": o([
-        { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "name", js: "name", typ: u(undefined, "") },
-        { json: "description", js: "description", typ: u(undefined, "") },
-    ], false),
     "Facturation": o([
         { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "schoolService", js: "schoolService", typ: u(undefined, null) },
-        { json: "cost", js: "cost", typ: u(undefined, null) },
-        { json: "payed", js: "payed", typ: u(undefined, null) },
-    ], false),
-    "GradeLevel": o([
-        { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "level", js: "level", typ: u(undefined, null) },
+        { json: "schoolService", js: "schoolService", typ: u(undefined, "") },
+        { json: "cost", js: "cost", typ: u(undefined, 0) },
+        { json: "payed", js: "payed", typ: u(undefined, true) },
     ], false),
 };

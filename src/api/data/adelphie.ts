@@ -7,7 +7,7 @@
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface Family {
+export interface Adelphie {
     id?:                    number;
     referingParentName?:    string;
     referingParentSurname?: string;
@@ -18,11 +18,11 @@ export interface Family {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toFamily(json: string): Family {
+    public static toFamily(json: string): Adelphie {
         return cast(JSON.parse(json), r("Family"));
     }
 
-    public static familyToJson(value: Family): string {
+    public static familyToJson(value: Adelphie): string {
         return JSON.stringify(uncast(value, r("Family")), null, 2);
     }
 }

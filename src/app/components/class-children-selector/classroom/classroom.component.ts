@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Classroom} from "../../../../api/data/classroom";
 import {Child} from "../../../../api/data/child";
-import {Family} from "../../../../api/data/family";
+import {Adelphie} from "../../../../api/data/adelphie";
 
 @Component({
   selector: 'app-classroom',

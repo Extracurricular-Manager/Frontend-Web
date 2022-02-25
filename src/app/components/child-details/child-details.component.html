@@ -13,10 +13,17 @@
                     <mat-label>Nom</mat-label>
                     <input matInput [(ngModel)]="child.surname">
                 </mat-form-field>
+
                 <mat-form-field appearance="fill">
                     <mat-label>Classe</mat-label>
-                    <input matInput [(ngModel)]="child.classroom!.name">
+                    <mat-select  [(value)]="child.classroom!.id">
+                        <mat-option>Toutes les classes</mat-option>
+                        <mat-option *ngFor="let truc of classrooms" [value]="truc.id" (click)="child.classroom = truc" >
+                            {{truc.name}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
+
             </div>
             <div class="display-in-column fit-content">
 
