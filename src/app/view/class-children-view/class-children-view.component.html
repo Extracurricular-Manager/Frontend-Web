@@ -1,4 +1,5 @@
 <div class="split">
-        <app-class-children-selector (currdata) = "this.val" (data)="this.val = $event"></app-class-children-selector>
+        <app-class-children-selector (currdata) = "this.val" (selectedItem)="this.val = $event"></app-class-children-selector>
         <app-child-details [child]=(this.val) (childNameUpdater)="this.val = $event"></app-child-details>
+        <p *ngIf="!this.val">Sélectionnez un élément sur le panneau de gauche</p>
 </div>

@@ -40,6 +40,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { FamilyDetailsComponent } from './family-details/family-details.component';
 
 
 @NgModule({
@@ -48,19 +49,20 @@ import { HttpClientModule } from "@angular/common/http";
     NavbarComponent,
     ClassroomComponent,
     ChildrenComponent,
-    ClassChildrenSelectorComponent,
     DashboardViewComponent,
+    ClassChildrenSelectorComponent,
+    ClassChildrenViewComponent,
     PricingViewComponent,
     BillingViewComponent,
     SettingsViewComponent,
     ModulesViewComponent,
-    ClassChildrenViewComponent,
     ChildDetailsComponent,
     LoginViewComponent,
     BillingFamilyComponent,
     BillingChildrenComponent,
     UsersComponent,
-    RolesComponent
+    RolesComponent,
+    FamilyDetailsComponent
   ],
 
   imports: [

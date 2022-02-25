@@ -1,17 +1,5 @@
-<mat-card class="fit-content" *ngIf="child" >
-    <h1 class="low-margin">{{[child.name]}} {{child.surname}}</h1>
-
-    <div class="alignment-row low-margin">
-        <div>Montant dû </div>
-        <mat-divider vertical style="height:50px"></mat-divider>
-        <div>
-            <p class="low-margin">cette semaine : {{weekAmount}}€</p>
-            <p class="low-margin">ce mois-ci : {{monthAmount}}€</p>
-            <p class="low-margin">au total : {{totalAmount}}€</p>
-        </div>
-    </div>
-
-
+<div class="fit-content" *ngIf="child" >
+    <h1>{{[child.name]}} {{child.surname}}</h1>
     <mat-card class="fit-content">
         <h2 style="padding-top: 4px">Profil</h2>
 
@@ -50,4 +38,4 @@
         </div>
         <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>
     </mat-card>
-</mat-card>
+</div>

@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import {Child} from "../data/child";
-import {ApiService} from "../api.service";
 import {Family} from "../data/family";
+import {ApiService} from "../api.service";
+import {Classroom} from "../data/classroom";
 
 @Injectable({
   providedIn: 'root'
 })
-export class FamilyApiService {
+export class ClassroomApiService {
 
-  protected constructor(private api: ApiService) { }
+  constructor(private api: ApiService) { }
 
-  root = "/family"
+  root = "/classroom"
 
-  pushOne(payload:Family){
+  pushOne(payload:Classroom){
     return this.api.post(this.root+"/"+payload.id!,payload)
   }
 
   getOneData(id:number){
-    return this.api.get<Family>(this.root+'/'+id)
+    return this.api.get<Classroom>(this.root+'/'+id)
   }
 
   getChildren(id:number){
@@ -25,7 +26,6 @@ export class FamilyApiService {
   }
 
   getAll(){
-    return this.api.get<Family[]>("/families")
+    return this.api.get<Classroom[]>(this.root+"s")
   }
-
 }

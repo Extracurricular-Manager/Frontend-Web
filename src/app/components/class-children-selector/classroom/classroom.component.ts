@@ -1,4 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Classroom} from "../../../../api/data/classroom";
+import {Child} from "../../../../api/data/child";
+import {Family} from "../../../../api/data/family";
 
 @Component({
   selector: 'app-classroom',
@@ -6,6 +9,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./classroom.component.scss']
 })
 export class ClassroomComponent implements OnInit {
+
+  @Output() selectedClassroom = new EventEmitter<Classroom>();
+
+  @Input() ItemsList : Classroom[] = []
+
+  @Input() value : any;
+
   constructor() { }
 
   ngOnInit(): void {

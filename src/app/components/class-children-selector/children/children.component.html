@@ -1,8 +1,7 @@
 <cdk-virtual-scroll-viewport itemSize="17" style="height: 500px" >
-
-    <mat-selection-list [multiple]="false">
+    <mat-selection-list [multiple]="false" [(ngModel)]="value">
     <mat-list-option *cdkVirtualFor="let child of itemsList" (click)="chold.emit(child)">
-        {{child.surname}} {{child.name}}
+        {{displayCorrectName(child)}}
         <mat-divider></mat-divider>
     </mat-list-option>
     <mat-list-option>+</mat-list-option>
