@@ -1,29 +1,45 @@
 $navBarHeight:64px;
 
-
 mat-sidenav-container{
-    min-height: calc(100vh - $navBarHeight);
-}
-mat-sidenav-content{
-    min-height: calc(100vh - $navBarHeight);
+    overflow: initial!important;
 }
 .contenair{
     padding: 20px 30px;
+    position: relative;
 }
-
+.contenair *{
+    margin-bottom: 60px;
+    display: block;
+}
 mat-sidenav{
     width:200px;
+    overflow: initial!important;
+}
+mat-sidenav > div{
+    overflow: initial!important;
+}
+mat-sidenav > div > div:first-child{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}mat-sidenav > div > div:last-child{
+    position: relative;
 }
 
 mat-sidenav mat-card{
     margin:5px;
-    cursor: pointer;
+    
+}
+mat-sidenav a{
+    color: initial;
+    text-decoration:none;
 }
 
 
 .toggleButton{
+    z-index: 3;
     margin: 0;
-    position: absolute;
+    position:fixed;
     top: 50%;
     -ms-transform: translate(-50%);
     transform: translate(-50%);

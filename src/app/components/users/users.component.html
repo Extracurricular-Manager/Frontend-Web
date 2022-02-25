@@ -1,1 +1,19 @@
-<p>users works!</p>
+<h1>Utilisateurs</h1>
+<mat-card >
+    <div>
+        <mat-list>
+            <mat-list-item *ngFor="let user of users">
+                <div matLine>{{ user.name }}</div>
+                <div matLine>{{ user.roles }}</div>
+            </mat-list-item>
+            <div>
+                <p class="horizItem">
+                    ajouter
+                </p>
+                <p class="horizItem">
+                    supprimer
+                </p>
+            </div>
+        </mat-list>
+    </div>
+</mat-card>

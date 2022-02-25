@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Jean",
+        "roles": [
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "name": "Sans Role",
+        "roles": []
+    },
+    {
+        "name": "Nicolas",
+        "roles": []
+    },
+    {
+        "name": "Hugo",
+        "roles": []
+    },
+    {
+        "name": "Valentin",
+        "roles": []
+    },
+    {
+        "name": "noname",
+        "roles": []
+    },
+    {
+        "name": "Sans Role",
+        "roles": []
+    },
+    {
+        "name": "Sans Role",
+        "roles": []
+    },
+    {
+        "name": "Sans Role",
+        "roles": []
+    }
+]

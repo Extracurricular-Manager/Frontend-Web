@@ -1,27 +1,39 @@
 <mat-sidenav-container>
-
+    
     <mat-sidenav mode="side" opened #sidenav>
-        <mat-card>
-            Utilisateurs
-        </mat-card>
-        <mat-card>
-            Rôles
-        </mat-card>
-        <mat-card>
-            Réinitialisations des mots de passe
-        </mat-card>
-        <mat-card>
-            Autres
-        </mat-card>
+        <div>
+            <a href="/{{routePath}}#usersComp">
+                <mat-card>
+                    Utilisateurs
+                </mat-card>
+            </a>
+            <a href="/{{routePath}}#rolesComp">
+                <mat-card>
+                    Rôles
+                </mat-card>
+            </a>
+            <a href="/{{routePath}}#">
+                <mat-card>
+                    Réinitialisations des mots de passe
+                </mat-card>
+            </a>
+            <a href="/{{routePath}}#">
+                <mat-card>
+                    Autres
+                </mat-card>
+            </a>
+        </div>
+        <div></div>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <button mat-fab class="toggleButton" color="primary" (click)="sidenav.toggle();"></button>
+
         <div class="contenair">
-            <div class="component">
-                <app-users></app-users>
-            </div>
+            <app-users id="usersComp"></app-users>
+            <app-roles id="rolesComp"></app-roles>
         </div>
+
     </mat-sidenav-content>
 
 </mat-sidenav-container>
