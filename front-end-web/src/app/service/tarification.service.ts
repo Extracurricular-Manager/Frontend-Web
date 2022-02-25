@@ -8,7 +8,7 @@ import { Pricing } from '../objects/pricing';
 })
 export class TarificationService{
 
-  urlPricing:string="http://backend:8080/api/tarifications/";
+  urlPricing:string="http://backend:8080/api/tarification/";
 
   constructor(private http: HttpClient){}
 
@@ -31,7 +31,7 @@ export class TarificationService{
 
 
   getAll():Observable<Pricing[]>{
-    return this.http.get<Pricing[]>(this.urlPricing);
+    return this.http.get<Pricing[]>(this.urlPricing+"s");
   }
 
   createPricing(c:Pricing):Observable<Pricing>{

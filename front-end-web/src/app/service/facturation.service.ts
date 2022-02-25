@@ -8,7 +8,7 @@ import { Facturation } from '../objects/facturation';
 })
 export class FacturationService {
 
-  urlFacturation:string="http://backend:8080/api/facturations/";
+  urlFacturation:string="http://backend:8080/api/facturation/";
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class FacturationService {
 
 
   getAll():Observable<Facturation[]>{
-    return this.http.get<Facturation[]>(this.urlFacturation);
+    return this.http.get<Facturation[]>(this.urlFacturation+"s");
   }
 
   createFacturation(c:Facturation):Observable<Facturation>{

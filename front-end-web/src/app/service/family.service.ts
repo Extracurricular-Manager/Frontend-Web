@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Child } from '../objects/child';
 import { Family } from '../objects/family';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Family } from '../objects/family';
 })
 export class FamilyService {
 
-  urlFamily:string="http://nackend:8080/api/families";
+  urlFamily:string="http://nackend:8080/api/family";
 
   public class=new BehaviorSubject<string>("");
   public currentClass=this.class.asObservable();
@@ -21,7 +22,11 @@ export class FamilyService {
 
 
   getAll():Observable<Family[]>{
-      return this.http.get<Family[]>(this.urlFamily);
+      return this.http.get<Family[]>(this.urlFamily.substring(0, this.urlFamily.length-1)+"ies");
+  }
+
+  getChildrenOfFamily(id:number):Observable<Child[]>{
+    return this.http.get<Child[]>(this.urlFamily+"/"+id+"/children");
   }
 
   getFamily(id:number):Observable<Family>{

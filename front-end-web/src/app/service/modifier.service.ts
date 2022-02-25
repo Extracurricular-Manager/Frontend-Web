@@ -8,7 +8,7 @@ import { Modifier } from '../objects/modifer';
 })
 export class ModifierService {
 
-  urlModifier:string="http://backend:8080/api/modifiers/";
+  urlModifier:string="http://backend:8080/api/modifier/";
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class ModifierService {
 
 
   getAll():Observable<Modifier[]>{
-    return this.http.get<Modifier[]>(this.urlModifier);
+    return this.http.get<Modifier[]>(this.urlModifier+"s");
   }
 
   createModifier(c:Modifier):Observable<Modifier>{
