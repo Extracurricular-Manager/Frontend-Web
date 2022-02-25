@@ -7,12 +7,20 @@
         <mat-card>
             Rôles
         </mat-card>
+        <mat-card>
+            Réinitialisations des mots de passe
+        </mat-card>
+        <mat-card>
+            Autres
+        </mat-card>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <button mat-fab class="toggleButton" color="primary" (click)="sidenav.toggle();"></button>
         <div class="contenair">
-            Main
+            <div class="component">
+                <app-users></app-users>
+            </div>
         </div>
     </mat-sidenav-content>
 

@@ -12,11 +12,12 @@ mat-sidenav-content{
 }
 
 mat-sidenav{
-    width:240px;
+    width:200px;
 }
 
 mat-sidenav mat-card{
     margin:5px;
+    cursor: pointer;
 }
 
 

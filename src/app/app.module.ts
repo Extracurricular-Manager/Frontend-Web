@@ -13,6 +13,8 @@ import { ClassChildrenSelectorComponent } from './components/class-children-sele
 import { ChildDetailsComponent } from './components/child-details/child-details.component';
 import { BillingFamilyComponent } from './components/billing/billing-family/billing-family.component';
 import { BillingChildrenComponent } from './components/billing/billing-children/billing-children.component';
+import { UsersComponent } from './components/users/users.component';
+import { RolesComponent } from './components/roles/roles.component';
 
 // Views
 import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
@@ -39,6 +41,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +58,9 @@ import { HttpClientModule } from "@angular/common/http";
     ChildDetailsComponent,
     LoginViewComponent,
     BillingFamilyComponent,
-    BillingChildrenComponent
+    BillingChildrenComponent,
+    UsersComponent,
+    RolesComponent
   ],
 
   imports: [
