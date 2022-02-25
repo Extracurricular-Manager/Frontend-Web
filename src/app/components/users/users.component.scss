@@ -1,3 +1,40 @@
 .horizItem{
     display: inline-block;
 }
+
+mat-list{
+    width:175px;
+    text-align: center;
+}
+
+mat-list > div button{
+    margin: 20px 6px 10px 6px;
+    padding:2px 8px;
+}
+
+mat-card{
+    width: fit-content;
+}
+
+.userParent{
+    display: flex;
+}
+
+.userInf{
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+.userInf > div:first-child{
+    display: flex;
+    align-items: center;
+}
+
+.userInf > div:first-child > span{
+    font-size: 1.25em;
+    margin-right:20px;
+}
+.userInf > div:first-child > mat-card{
+    min-width: 5em;
+    min-height: 1.1em;
+}

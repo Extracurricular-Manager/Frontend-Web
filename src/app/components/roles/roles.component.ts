@@ -13,13 +13,3 @@ export class RolesComponent implements OnInit {
   }
 
 }
-
-export class permission{
-  id:number=-1;
-  name:string="";
-
-  constructor(idd:number,nam:string){
-    this.id=idd;
-    this.name=nam;
-  }
-}

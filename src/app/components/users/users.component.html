@@ -1,19 +1,32 @@
 <h1>Utilisateurs</h1>
-<mat-card >
-    <div>
+<div class="userParent">
+    <mat-card class="horizItem">
         <mat-list>
-            <mat-list-item *ngFor="let user of users">
-                <div matLine>{{ user.name }}</div>
-                <div matLine>{{ user.roles }}</div>
+            <mat-list-item *ngFor="let user of users" >
+                <button mat-raised-button matLine (click)="selected=user;">
+                    {{ user.name }}
+                </button>
             </mat-list-item>
             <div>
-                <p class="horizItem">
-                    ajouter
-                </p>
-                <p class="horizItem">
-                    supprimer
-                </p>
+                <button mat-raised-button class="horizItem" color="primary">
+                    Ajouter
+                </button>
+                <button mat-raised-button class="horizItem">
+                    Supprimer
+                </button>
             </div>
         </mat-list>
+    </mat-card>
+
+    <div class="horizItem userInf">
+        <div>
+            <span>Nom : </span>
+            <mat-card class="horizItem">
+                {{selected.name}}
+            </mat-card>
+        </div>
+        <div>
+            
+        </div>
     </div>
-</mat-card>
+</div>

@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "name": "Jean",
         "roles": [
             0,
@@ -8,35 +9,33 @@
         ]
     },
     {
+        "id": 1,
         "name": "Sans Role",
-        "roles": []
+        "roles": [0]
     },
     {
+        "id": 2,
         "name": "Nicolas",
-        "roles": []
+        "roles": [0]
     },
     {
+        "id": 3,
         "name": "Hugo",
-        "roles": []
+        "roles": [0]
     },
     {
+        "id": 4,
         "name": "Valentin",
-        "roles": []
+        "roles": [2]
     },
     {
+        "id": 5,
         "name": "noname",
-        "roles": []
+        "roles": [1]
     },
     {
+        "id": 6,
         "name": "Sans Role",
-        "roles": []
-    },
-    {
-        "name": "Sans Role",
-        "roles": []
-    },
-    {
-        "name": "Sans Role",
-        "roles": []
+        "roles": [0,1]
     }
 ]

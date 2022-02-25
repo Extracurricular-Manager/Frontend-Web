@@ -1,13 +1,17 @@
-$navBarHeight:64px;
+$navBarHeight:70px;
+
+mat-sidenav-content{
+    min-height: calc(100vh - $navBarHeight);
+}
 
 mat-sidenav-container{
     overflow: initial!important;
 }
 .contenair{
-    padding: 20px 30px;
+    padding: 20px 40px;
     position: relative;
 }
-.contenair *{
+.contenair > *{
     margin-bottom: 60px;
     display: block;
 }
