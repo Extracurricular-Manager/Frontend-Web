@@ -43,7 +43,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { FamilyDetailsComponent } from './family-details/family-details.component';
 import {MatDialog, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatTableModule} from "@angular/material/table";
-import { SmartSelectorComponent } from './smart-selector/smart-selector.component';
+import { SmartSelectorComponent } from './components/smart-selector/smart-selector.component';
+import { NewClassDialogComponent } from './dialogs/new-class-dialog/new-class-dialog.component';
+import { IntentionnalyVoidComponentPleaseDoNotEditThanksComponent } from './components/intentionnaly-void-component-please-do-not-edit-thanks/intentionnaly-void-component-please-do-not-edit-thanks.component';
 
 
 @NgModule({
@@ -66,7 +68,9 @@ import { SmartSelectorComponent } from './smart-selector/smart-selector.componen
     UsersComponent,
     RolesComponent,
     FamilyDetailsComponent,
-    SmartSelectorComponent
+    SmartSelectorComponent,
+    NewClassDialogComponent,
+    IntentionnalyVoidComponentPleaseDoNotEditThanksComponent
   ],
 
   imports: [

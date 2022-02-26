@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {ApiService} from "../api.service";
 import {Child} from "../data/child";
+import {BaseApiService} from "./BaseApiService";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChildApiService {
+export class ChildApiService implements BaseApiService {
 
   protected constructor(private api: ApiService) { }
 
