@@ -1,10 +1,10 @@
 <div class="rootElm">
     <h1>Utilisateurs</h1>
-    <div class="userParent">
+    <mat-card class="userParent">
         <mat-card class="horizItem">
             <mat-list>
                 <mat-list-item *ngFor="let user of users" >
-                    <button mat-raised-button matLine (click)="selected=user;">
+                    <button mat-raised-button matLine (click)="selUser=user;">
                         {{ user.name }}
                     </button>
                 </mat-list-item>
@@ -23,20 +23,25 @@
             <div>
                 <span>Nom : </span>
                 <mat-form-field appearance="fill" class="horizItem">
-                    <input type="name" value="{{selected.name}}" matInput />
+                    <input type="name" value="{{selUser.name}}" matInput />
                 </mat-form-field>
             </div>
-            <div>
+            <mat-card>
                 <span>Rôles : </span>
                 <mat-selection-list>
                     <mat-list-option *ngFor="let role of getRoles();"
                         [selected]="isSelected(role.id)"
-                    ><!-- [selected]="isSelected(role.id,selected)" (click)="isSelected(role.id)"-->
+                        (click)="clickRole(role)"
+                    >
                         {{role.name}}
                     </mat-list-option>
-                    <!--[selected]="isSelected"--><!--disabled="true"-->
                 </mat-selection-list>
+            </mat-card>
+            <div class="saveButton">
+                <button mat-raised-button color="primary">
+                    Enregistrer
+                </button>
             </div>
         </div>
-    </div>
+    </mat-card>
 </div>

@@ -4,28 +4,32 @@
 .rootElm{
     width: fit-content;
     margin: 0 auto;
+    padding-bottom: 1000px;
+}
+.rootElm > h1{
+    margin-left: max(-30px, -2.5vw);
 }
 mat-list{
     width:175px;
     text-align: center;
 }
 
-.userParent > mat-card > mat-list > div button{
+.userParent > mat-card:first-child > mat-list > div button{
     margin: 0 2px;
     padding:0 8px;
 }
 
-.userParent > mat-card{
+.userParent > mat-card:first-child{
     width: fit-content;
 }
 
-.userParent > mat-card > mat-list > div{
+.userParent > mat-card:first-child > mat-list > div{
     padding: 16px 0 5px 0;
 }
 
 .userParent{
     display: flex;
-    padding-left: min(40px, 2vw);
+    padding:40px min(60px, 4vw);
 }
 
 .userInf{
@@ -33,29 +37,40 @@ mat-list{
     margin-top: 10px;
 }
 
-.userInf > div{
+.userInf > *{
     margin: 25px 0;
 }
 
-.userInf > div:first-child{
+.userInf > div{
     display: flex;
     align-items: center;
 }
-.userInf > div:first-child > span{
+.userInf > div > span{
     margin-top: -0.5em;
 }
-.userInf > div:first-child .mat-form-field-flex{
+.userInf > div > mat-form-field{
+    width: 11em;
+}
+.userInf > div .mat-form-field-flex{
     padding: 0 .75em 0 .75em !important;
     font-size: 1.2em;
 }
 
 
-.userInf > div > span{
+.userInf > * > span{
     font-size: 1.125em;
     margin-right:20px;
     white-space: nowrap;
 }
 
-.userInf > div:last-child{
+.userInf > mat-card > mat-selection-list{
+    margin-left: 1.5em;
+}
 
+.saveButton{
+    margin: 0;
+}
+
+.saveButton > button{
+    margin: 0 0 0 auto;
 }

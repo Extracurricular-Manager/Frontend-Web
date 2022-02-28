@@ -17,7 +17,7 @@ export class UsersComponent {
   roles:Map<number,role>=new Map();
 
   //user choisi sur l interface
-  selected: User=new User();//on initialise avec un user vide (qui ne sera pas save)
+  selUser: User=new User;
 
   constructor() {
     this.parseJsons(userJson, rolesJson);
@@ -51,7 +51,7 @@ export class UsersComponent {
   }
 
   isSelected(id:number):boolean{
-    for(var role of this.selected.roles){
+    for(var role of this.selUser.roles){
       if(id == role.id){
         return true;
       }
@@ -61,5 +61,24 @@ export class UsersComponent {
 
   getRoles() {
     return Array.from(this.roles.values());
-  } 
+  }
+
+  clickRole(role:role){
+    var arr=this.selUser.roles;
+    for(var i=0;i<arr.length;i++){
+      var actualRole=arr[i];
+      if(actualRole.id == role.id){
+        //enlever le role
+        this.selUser.roles.splice(i,1);
+        console.log("enlever :"+role.name);
+        console.log(this.selUser.roles);
+        return;
+      }
+    }
+    //ajouter le role
+    this.selUser.roles.push(role);
+    console.log("ajouter :"+role.name);
+    console.log(this.selUser.roles);
+  }
+
 }
