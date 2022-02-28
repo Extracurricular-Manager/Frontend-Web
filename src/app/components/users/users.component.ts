@@ -3,6 +3,7 @@ import userJson from './exUsers.json';
 import { User } from './user';
 import  rolesJson  from '../roles/exRoles.json';
 import { role } from '../roles/roles';
+import { MatListOption } from '@angular/material/list';
 
 @Component({
   selector: 'app-users',
@@ -33,7 +34,6 @@ export class UsersComponent {
       this.roles.set(roleu.id,roleu);
     }
 
-
     this.users=[];
     for(var user of json){
       var usr:User= new User();
@@ -46,7 +46,6 @@ export class UsersComponent {
           usr.roles.push(rl);
         }
       }
-
       this.users.push(usr);
     }
   }
@@ -63,5 +62,4 @@ export class UsersComponent {
   getRoles() {
     return Array.from(this.roles.values());
   } 
-
 }

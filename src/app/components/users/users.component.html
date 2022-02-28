@@ -29,9 +29,9 @@
             <div>
                 <span>Rôles : </span>
                 <mat-selection-list>
-                    <!--(selectionChange)="onListSelectionChange($event)"-->
-                    <mat-list-option *ngFor="let role of getRoles()" [selected]="isSelected(role.id)"
-                    ><!--(click)="isSelected(role.id)"-->
+                    <mat-list-option *ngFor="let role of getRoles();"
+                        [selected]="isSelected(role.id)"
+                    ><!-- [selected]="isSelected(role.id,selected)" (click)="isSelected(role.id)"-->
                         {{role.name}}
                     </mat-list-option>
                     <!--[selected]="isSelected"--><!--disabled="true"-->
