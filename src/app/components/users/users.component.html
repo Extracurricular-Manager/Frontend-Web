@@ -1,19 +1,42 @@
-<h1>Utilisateurs</h1>
-<mat-card >
-    <div>
-        <mat-list>
-            <mat-list-item *ngFor="let user of users">
-                <div matLine>{{ user.name }}</div>
-                <div matLine>{{ user.roles }}</div>
-            </mat-list-item>
+<div class="rootElm">
+    <h1>Utilisateurs</h1>
+    <div class="userParent">
+        <mat-card class="horizItem">
+            <mat-list>
+                <mat-list-item *ngFor="let user of users" >
+                    <button mat-raised-button matLine (click)="selected=user;">
+                        {{ user.name }}
+                    </button>
+                </mat-list-item>
+                <div>
+                    <button mat-raised-button class="horizItem" color="primary">
+                        Ajouter
+                    </button>
+                    <button mat-raised-button class="horizItem">
+                        Supprimer
+                    </button>
+                </div>
+            </mat-list>
+        </mat-card>
+
+        <div class="horizItem userInf">
             <div>
-                <p class="horizItem">
-                    ajouter
-                </p>
-                <p class="horizItem">
-                    supprimer
-                </p>
+                <span>Nom : </span>
+                <mat-form-field appearance="fill" class="horizItem">
+                    <input type="name" value="{{selected.name}}" matInput />
+                </mat-form-field>
             </div>
-        </mat-list>
+            <div>
+                <span>Rôles : </span>
+                <mat-selection-list>
+                    <!--(selectionChange)="onListSelectionChange($event)"-->
+                    <mat-list-option *ngFor="let role of getRoles()" [selected]="isSelected(role.id)"
+                    ><!--(click)="isSelected(role.id)"-->
+                        {{role.name}}
+                    </mat-list-option>
+                    <!--[selected]="isSelected"--><!--disabled="true"-->
+                </mat-selection-list>
+            </div>
+        </div>
     </div>
-</mat-card>
+</div>

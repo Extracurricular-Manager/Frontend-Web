@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {Child} from "../../../api/data/child";
 import {ClassroomApiService} from "../../../api/domain-specific/classroom-api.service";
 import {Classroom} from "../../../api/data/classroom";
@@ -15,19 +15,18 @@ export class ChildDetailsComponent implements OnInit {
   classrooms : Classroom[] | undefined
   monthAmount: any;
   totalAmount: any;
-
   constructor(private classApi:ClassroomApiService) {
     this.ngOnRefresh()
   }
 
   ngOnRefresh(){
     this.classApi.getAll().subscribe(t=>{
-      console.log(t.body)
       this.classrooms = t.body as Classroom[]
     })
   }
 
   ngOnInit(): void {
+    console.log(this)
   }
 
   update(nval:any){

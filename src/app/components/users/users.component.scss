@@ -1,3 +1,61 @@
 .horizItem{
     display: inline-block;
 }
+.rootElm{
+    width: fit-content;
+    margin: 0 auto;
+}
+mat-list{
+    width:175px;
+    text-align: center;
+}
+
+mat-list > div button{
+    margin: 20px 6px 10px 6px;
+    padding:2px 8px;
+}
+
+.userParent > mat-card{
+    width: fit-content;
+}
+
+.userParent > mat-card > mat-list > div{
+    padding: 15px 0 5px 0;
+}
+
+.userParent{
+    display: flex;
+    padding-left: min(40px, 2vw);
+}
+
+.userInf{
+    margin-left: min(60px, 4vw);
+    margin-top: 10px;
+}
+
+.userInf > div{
+    margin: 25px 0;
+}
+
+.userInf > div:first-child{
+    display: flex;
+    align-items: center;
+}
+.userInf > div:first-child > span{
+    margin-top: -0.5em;
+}
+.userInf > div:first-child .mat-form-field-flex{
+    padding: 0 .75em 0 .75em !important;
+    font-size: 1.2em;
+}
+
+
+.userInf > div > span{
+    font-size: 1.125em;
+    margin-right:20px;
+    white-space: nowrap;
+}
+
+.userInf > div:last-child{
+
+}

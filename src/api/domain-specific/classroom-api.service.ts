@@ -3,11 +3,12 @@ import {Child} from "../data/child";
 import {Adelphie} from "../data/adelphie";
 import {ApiService} from "../api.service";
 import {Classroom} from "../data/classroom";
+import {BaseApiService} from "./BaseApiService";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClassroomApiService {
+export class ClassroomApiService implements BaseApiService{
 
   constructor(private api: ApiService) { }
 
