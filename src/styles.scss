@@ -285,7 +285,7 @@ $altTheme: (
 .alignment-row {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   gap:10px;
   align-items: center;
 }
@@ -293,14 +293,14 @@ $altTheme: (
 .display-in-column {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .display-in-row {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap:20px;
 }
