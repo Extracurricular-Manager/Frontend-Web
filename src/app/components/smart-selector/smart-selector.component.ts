@@ -15,28 +15,42 @@ export class SmartSelectorComponent<T> implements OnInit {
   @Output() shouldRefreshInputData = new EventEmitter();
   @Output() userSelection = new EventEmitter();
   @Input() dataset : any[] | undefined
+  @Input() noSelectionItemString : string | undefined
   @Input() newContentItemString = "Ajouter un élément"
   @Input() newContentDialog : ComponentType<any>
-  
+  @Input() selectedItem : any
+
   constructor(public dialog: MatDialog) {
     this.newContentDialog = IntentionnalyVoidComponentPleaseDoNotEditThanksComponent
   }
 
   ngOnInit(): void {
+
+    if(this.selectedItem.hasOwnProperty("id")) this.selectedItem = this.selectedItem.id
+
   }
 
   openDialog(): void {
     const dialogRef = this.dialog
-        .open(this.newContentDialog)
-        .afterClosed()
+        .open(this.newContentDialog,
+            {
+              data:{}
+            })
+        .afterClosed().subscribe(n=>{
+          console.log(n)
+              if (n != null) {
+                this.dataset?.push(n)
+                this.shouldRefreshInputData.emit(true)
+                this.selectedItem = n
+              }
+            }
+        )
   }
 
-  process(event:any){
-    console.log(event)
-    if (event === true){
-      this.openDialog()
-    }
-  }
+saveSelection(sel :any){
+    this.selectedItem = sel.id
+  this.userSelection.emit(sel)
+}
 
   correctlyGenerateName(item:T){
     try {

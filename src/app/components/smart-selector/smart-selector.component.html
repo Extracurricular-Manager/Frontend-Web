@@ -1,9 +1,10 @@
 <mat-form-field appearance="fill">
 <mat-label>Classe</mat-label>
-<mat-select [(value)]="userSelection">
-    <mat-option *ngFor="let truc of []" (click)="userSelection.emit($event)" >
-        {{truc}}
+<mat-select [(ngModel)]="selectedItem" [id]="selectedItem.id">
+    <mat-option *ngIf="noSelectionItemString">{{this.noSelectionItemString}}</mat-option>
+    <mat-option *ngFor="let datasetItem of dataset" [id]="datasetItem.id" [value]="datasetItem.id" (click)="saveSelection(datasetItem)" >
+        {{correctlyGenerateName(datasetItem)}}
     </mat-option>
-    <mat-option (click)="openDialog()">{{this.newContentItemString}}</mat-option>
+    <mat-option (click)="openDialog()" [value]="true">{{this.newContentItemString}}</mat-option>
 </mat-select>
 </mat-form-field>
