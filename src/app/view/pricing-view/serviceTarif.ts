@@ -11,9 +11,10 @@ export class critere{
 
 
 export class inputTarif{
-    name:string="";
+    name:string="";//description of this elem (ex: price)
     
-    type:string="";
+    type:string="";//type of input element
+    realType:string="";//real type of this value
     step:string="default";
 
     valPos:Array<any>=[];

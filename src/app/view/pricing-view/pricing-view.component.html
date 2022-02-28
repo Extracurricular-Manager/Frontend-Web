@@ -19,13 +19,13 @@
                             <span *ngIf="item.name=='prix'">:</span>
                             <span *ngIf="item.name=='tranche'">/</span>
 
-                            <mat-form-field appearance="fill" class="inputForm">
+                            <mat-form-field appearance="fill" class="inputForm" floatLabel="always">
                                 <mat-label>{{item.name}}</mat-label>
 
                                 <ng-container *ngIf="item.type=='list'; then inputList; else inputOther"></ng-container>
 
                                 <ng-template #inputOther>
-                                    <input type="{{item.type}}" step="{{item.step}}" min="0" value="{{item.value}}" matInput />
+                                    <input type="{{item.type}}" step="{{item.step}}" min="0" [(ngModel)]="item.value" matInput />
                                 </ng-template>
 
                                 <ng-template #inputList>
@@ -35,6 +35,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </ng-template>
+                                
+                                <span *ngIf="item.realType=='currency'" matSuffix>€</span>
+
                             </mat-form-field>
 
                         </div>
