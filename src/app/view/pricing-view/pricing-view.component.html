@@ -25,7 +25,7 @@
                                 <ng-container *ngIf="item.type=='list'; then inputList; else inputOther"></ng-container>
 
                                 <ng-template #inputOther>
-                                    <input type="{{item.type}}" step="{{item.step}}" min="0" value="{{item.value}}" (load)="item.name='pd'" matInput />
+                                    <input type="{{item.type}}" step="{{item.step}}" min="0" [(ngModel)]="item.value" matInput />
                                 </ng-template>
 
                                 <ng-template #inputList>
