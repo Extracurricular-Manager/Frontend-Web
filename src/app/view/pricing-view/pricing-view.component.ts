@@ -33,6 +33,8 @@ export class PricingViewComponent implements AfterViewInit {
 
           //TYPE
           if(typeof(input["type"]) == "string"){
+            inp.realType=input["type"];
+            
             switch(input["type"]){
               case "int":
                 inp.type="number";break;
@@ -44,11 +46,16 @@ export class PricingViewComponent implements AfterViewInit {
               case "time":
                 inp.type="time";break;
 
+              case "currency":
+                inp.step="any";
+                inp.type="number";break;
+
               default:
                 inp.type="number";break;
             }
           }else{//type est une liste de valeur possible
             inp.type="list";
+            inp.realType="list";
             inp.valPos=input["type"];
             //console.log(inp.valPos);
           }

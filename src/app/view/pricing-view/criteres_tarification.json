@@ -37,7 +37,7 @@
                     },
                     {
                         "name" : "prix",
-                        "type" : "float",
+                        "type" : "currency",
                         "value" : 5.5
                     },
                     {
@@ -57,7 +57,7 @@
                     },
                     {
                         "name" : "prix",
-                        "type" : "float",
+                        "type" : "currency",
                         "value" : 0
                     },
                     {
