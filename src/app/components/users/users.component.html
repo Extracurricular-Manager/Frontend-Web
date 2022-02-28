@@ -23,7 +23,7 @@
             <div>
                 <span>Nom : </span>
                 <mat-form-field appearance="fill" class="horizItem">
-                    <input type="name" value="{{selUser.name}}" matInput />
+                    <input type="name" [(ngModel)]="selUser.name" matInput />
                 </mat-form-field>
             </div>
             <mat-card>
