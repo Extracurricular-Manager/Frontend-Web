@@ -23,7 +23,7 @@ export class ChildrenComponent implements OnInit {
 
   displayCorrectName(item : Child | Adelphie){
     let result =  item.hasOwnProperty("name") ? this.getChildName(item) : this.getFamilyReferentName(item)
-    console.log(result)
+    //console.log(result)
     return result
   }
 

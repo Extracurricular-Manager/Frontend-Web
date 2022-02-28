@@ -1,3 +1,12 @@
+<!--<app-smart-selector
+    [dataset]="ItemsList"
+    [noSelectionItemString]="'Toutes les classes'"
+    [newContentItemString]="'Ajouter une classe'"
+    (userSelection)="selectedClassroom.emit($event.value)"
+    [selectedItem]="0"
+></app-smart-selector>-->
+
+
 <mat-form-field appearance="fill">
      <mat-label>Classe</mat-label>
      <mat-select [(ngModel)]="value" (selectionChange)="selectedClassroom.emit($event.value)">
