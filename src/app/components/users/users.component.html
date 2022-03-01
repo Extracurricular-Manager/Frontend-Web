@@ -1,32 +1,47 @@
-<h1>Utilisateurs</h1>
-<div class="userParent">
-    <mat-card class="horizItem">
-        <mat-list>
-            <mat-list-item *ngFor="let user of users" >
-                <button mat-raised-button matLine (click)="selected=user;">
-                    {{ user.name }}
-                </button>
-            </mat-list-item>
+<div class="rootElm">
+    <h1>Utilisateurs</h1>
+    <mat-card class="userParent">
+        <mat-card class="horizItem">
+            <mat-list>
+                <mat-list-item *ngFor="let user of users" >
+                    <button mat-raised-button matLine (click)="selUser=user;">
+                        {{ user.name }}
+                    </button>
+                </mat-list-item>
+                <div>
+                    <button mat-raised-button class="horizItem" color="primary">
+                        Ajouter
+                    </button>
+                    <button mat-raised-button class="horizItem">
+                        Supprimer
+                    </button>
+                </div>
+            </mat-list>
+        </mat-card>
+
+        <div class="horizItem userInf">
             <div>
-                <button mat-raised-button class="horizItem" color="primary">
-                    Ajouter
-                </button>
-                <button mat-raised-button class="horizItem">
-                    Supprimer
+                <span>Nom : </span>
+                <mat-form-field appearance="fill" class="horizItem">
+                    <input type="name" [(ngModel)]="selUser.name" matInput />
+                </mat-form-field>
+            </div>
+            <mat-card>
+                <span>Rôles : </span>
+                <mat-selection-list>
+                    <mat-list-option *ngFor="let role of getRoles();"
+                        [selected]="isSelected(role.id)"
+                        (click)="clickRole(role)"
+                    >
+                        {{role.name}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card>
+            <div class="saveButton">
+                <button mat-raised-button color="primary">
+                    Enregistrer
                 </button>
             </div>
-        </mat-list>
+        </div>
     </mat-card>
-
-    <div class="horizItem userInf">
-        <div>
-            <span>Nom : </span>
-            <mat-card class="horizItem">
-                {{selected.name}}
-            </mat-card>
-        </div>
-        <div>
-            <span>Rôles : </span>
-        </div>
-    </div>
 </div>

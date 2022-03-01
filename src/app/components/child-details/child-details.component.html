@@ -16,28 +16,23 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>Classe</mat-label>
-                    <mat-select  [(value)]="child.classroom!.id">
+                    <mat-select [(value)]="child.classroom!.id">
                         <mat-option>Toutes les classes</mat-option>
                         <mat-option *ngFor="let truc of classrooms" [value]="truc.id" (click)="child.classroom = truc" >
                             {{truc.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-
             </div>
             <div class="display-in-column fit-content">
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Régime alimentaire</mat-label>
-                    <input matInput value="{{child.diets}}">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Allergies</mat-label>
-                    <input matInput value="{{child.diets}}">
-                </mat-form-field>
-
-                    <app-smart-selector></app-smart-selector>
+                <app-smart-selector
+                        [newContentItemString]="'Ajouter une classe'"
+                        [newContentDialog]="ncComp"
+                        [dataset]="classrooms"
+                        [selectedItem]="child.classroom!.id"
+                        (userSelection)="child.classroom=$event"
+                ></app-smart-selector>
             </div>
         </div>
         <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>

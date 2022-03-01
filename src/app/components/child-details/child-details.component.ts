@@ -2,6 +2,7 @@ import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/c
 import {Child} from "../../../api/data/child";
 import {ClassroomApiService} from "../../../api/domain-specific/classroom-api.service";
 import {Classroom} from "../../../api/data/classroom";
+import {NewClassDialogComponent} from "../../dialogs/new-class-dialog/new-class-dialog.component";
 
 @Component({
   selector: 'app-child-details',
@@ -12,9 +13,14 @@ export class ChildDetailsComponent implements OnInit {
   @Input() child : Child | undefined;
   @Output() childNameUpdater = new EventEmitter<any>();
 
+
+  ncComp = NewClassDialogComponent
   classrooms : Classroom[] | undefined
   monthAmount: any;
   totalAmount: any;
+
+  selectedClassroom : Classroom | undefined
+
   constructor(private classApi:ClassroomApiService) {
     this.ngOnRefresh()
   }
