@@ -1,7 +1,7 @@
 <mat-card class="scrollable-content" style="overflow-y: auto">
 
     <div class="centered small-bottom-margin">
-        <mat-button-toggle-group [(ngModel)]="this.showAdelphie" (ngModelChange)="onPillSelectorUpdate()" name="fontStyle">
+        <mat-button-toggle-group [(ngModel)]="this.showAdelphie" (ngModelChange)="onPillSelectorUpdate()">
             <mat-button-toggle value=true>Adelphie</mat-button-toggle>
             <mat-button-toggle class="mat-button-toggle-checked" [ngClass]="{'mat-button-toggle-checked':!this.showAdelphie}">Individuel</mat-button-toggle>
         </mat-button-toggle-group>

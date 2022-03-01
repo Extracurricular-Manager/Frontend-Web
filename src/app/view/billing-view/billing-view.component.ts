@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Child } from 'src/api/data/child';
 
 @Component({
   selector: 'app-billing-view',
@@ -7,27 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillingViewComponent implements OnInit {
 
-  child = {
-    "name":"marc",
-    "surname":"michel",
-    "classroom":{
-      "name":""
-    },
-    diet:{
-      "name":""
-    }
-  };
-  weekAmount: any;
-  monthAmount: any;
-  totalAmount: any;
+  val: Child | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  apu(){
-    localStorage.removeItem('token')
   }
 
 }
