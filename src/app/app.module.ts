@@ -47,8 +47,8 @@ import { SmartSelectorComponent } from './components/smart-selector/smart-select
 import { NewClassDialogComponent } from './dialogs/new-class-dialog/new-class-dialog.component';
 import { IntentionnalyVoidComponentPleaseDoNotEditThanksComponent } from './components/intentionnaly-void-component-please-do-not-edit-thanks/intentionnaly-void-component-please-do-not-edit-thanks.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core'
-
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -100,7 +100,8 @@ import { MatNativeDateModule } from '@angular/material/core'
     MatTableModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatStepperModule
   ],
 
   providers: [
