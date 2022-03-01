@@ -46,7 +46,7 @@
 </mat-card>
 
 <!-- Button Pop à mettre dans sidenav -->
-<button mat-fab><div class="material-icons">add</div></button>
+<button mat-fab (click)="openDialog()" [value]="true"><div class="material-icons">add</div></button>
 </div>
 
 <!-- Dialog -->

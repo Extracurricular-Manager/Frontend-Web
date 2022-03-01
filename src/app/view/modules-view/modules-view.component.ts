@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {ComponentType} from "@angular/cdk/overlay";
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 //import { DialogStepperComponent } from 'src/app/dialog-stepper/dialog-stepper.component';
 
 export interface PeriodicElement {
@@ -31,9 +32,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
     }) 
 
     export class ModulesViewComponent implements OnInit {
+      @Input() newContentDialog : ComponentType<any>
+      @Output() shouldRefreshInputData = new EventEmitter();
+      @Input() dataset : any[] | undefined
+      @Input() selectedItem : any
       
       
   constructor(public dialog: MatDialog) {    
+    this.newContentDialog = StepDialog;
   }
       ngOnInit(): void { }
 
@@ -53,6 +59,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  openDialog2(): void {
+    const dialogRef = this.dialog
+        .open(this.newContentDialog,
+            {
+              data:{}
+            })
+        .afterClosed().subscribe(n=>{
+          console.log(n)
+              if (n != null) {
+                this.dataset?.push(n)
+                this.shouldRefreshInputData.emit(true)
+                this.selectedItem = n
+              }
+            }
+        )
+  }
+
+
+
 }
 
 @Component({
@@ -60,6 +86,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: 'step-dialog.html',
  }) 
  
-export class StepDialog{} 
+export class StepDialog{
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data:any) { }
+
+  ngOnInit(): void {
+  }
+} 
     
 
