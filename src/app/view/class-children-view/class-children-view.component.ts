@@ -14,6 +14,8 @@ export class ClassChildrenViewComponent implements OnInit {
 
   constructor() { }
 
+
+
   ngOnInit(): void {
   }
 
@@ -21,5 +23,7 @@ export class ClassChildrenViewComponent implements OnInit {
     this.val = val
     console.log(val)
   }
+
+
 
 }
