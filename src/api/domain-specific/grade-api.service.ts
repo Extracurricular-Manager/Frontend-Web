@@ -40,7 +40,7 @@ export class GradeApiService {
  */
 
   getAll(){
-    return this.api.get<GradeLevel[]>("/families")
+    return this.api.get<GradeLevel[]>(this.root)
   }
 
 
