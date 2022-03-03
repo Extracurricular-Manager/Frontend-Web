@@ -53,10 +53,13 @@ export class ChildDetailsComponent implements OnInit {
 
   sendToBackend(){
     console.log(this.child)
-    if(this.child)
+    if(this.child){
+      console.log(this.child)
       this.childApi.sendChild(this.child).subscribe(t=>{
         console.log(t)
       })
+    }
+
   }
 
 }

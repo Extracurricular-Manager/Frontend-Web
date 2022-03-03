@@ -14,8 +14,21 @@ export class ClassroomApiService implements BaseApiService{
 
   root = "/classroom"
 
+  sendClassroom(payload:Classroom){
+    if(payload.id == -1){
+      delete payload.id
+      return this.postOne(payload)
+    } else {
+      return this.patch(payload)
+    }
+  }
+
+  patch(payload:Classroom ){
+    return this.api.patch<Classroom>(this.root+'/'+payload.id!,payload)
+  }
+
   postOne(payload:Classroom){
-    return this.api.post(this.root+"/"+payload.id!,payload)
+    return this.api.post(this.root,payload)
   }
 
   getOneData(id:number){
