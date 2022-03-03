@@ -16,6 +16,7 @@ export class SmartSelectorComponent<T> implements OnInit {
   @Output() userSelection = new EventEmitter();
   @Input() dataset : any[] | undefined
   @Input() noSelectionItemString : string | undefined
+  @Input() itemName : string | undefined
   @Input() newContentItemString = "Ajouter un élément"
   @Input() newContentDialog : ComponentType<any>
   @Input() selectedItem : any
