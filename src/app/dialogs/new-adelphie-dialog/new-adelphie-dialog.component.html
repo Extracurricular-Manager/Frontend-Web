@@ -1,0 +1,19 @@
+<div [formGroup]="adelphieForm" class="display-in-column">
+    <mat-form-field  appearance="fill">
+        <mat-label>Prénom du parent référent</mat-label>
+        <input matInput formControlName = "referingParentName" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Nom du parent référent</mat-label>
+        <input matInput formControlName = "referingParentSurname" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Téléphone</mat-label>
+        <input matInput formControlName = "telephoneNumber" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Adresse Postale</mat-label>
+        <input matInput formControlName = "postalAdress" required>
+    </mat-form-field>
+    <button mat-raised-button [mat-dialog-close]="send()" color="primary" style="width: 100%">Ajouter et sélectionner</button>
+</div>
