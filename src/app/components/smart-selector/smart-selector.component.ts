@@ -54,9 +54,11 @@ saveSelection(sel :any){
 }
 
   correctlyGenerateName(item:T){
+    
     try {
       // @ts-ignore
-      if (!item.hasOwnProperty("name")){
+      if (item && !item.hasOwnProperty("name") ){
+        console.log(item)
         // @ts-ignore
         return item.referingParentName + " " + item.referingParentSurname //definitely not a great fix but anyway
       } else {
