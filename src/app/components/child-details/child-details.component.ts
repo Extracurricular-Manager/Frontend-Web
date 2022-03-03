@@ -7,6 +7,8 @@ import {NewClassDialogComponent} from "../../dialogs/new-class-dialog/new-class-
 import { FamilyApiService } from 'src/api/domain-specific/family-api.service';
 import { NewAdelphieDialogComponent } from 'src/app/dialogs/new-adelphie-dialog/new-adelphie-dialog.component';
 import { ChildApiService } from 'src/api/domain-specific/child-api.service';
+import { NewGradeDialogComponent } from 'src/app/dialogs/new-grade-dialog/new-grade-dialog.component';
+import { GradeLevel } from 'src/api/data/grade-level';
 
 @Component({
   selector: 'app-child-details',
@@ -20,8 +22,10 @@ export class ChildDetailsComponent implements OnInit {
 
   ncComp = NewClassDialogComponent
   naComp = NewAdelphieDialogComponent
+  ngComp = NewGradeDialogComponent
   classrooms : Classroom[] | undefined;
-  adelphie: Adelphie[] | undefined;
+  adelphies: Adelphie[] | undefined;
+  grades: GradeLevel[] | undefined;
   monthAmount: any;
   totalAmount: any;
 
@@ -38,7 +42,7 @@ export class ChildDetailsComponent implements OnInit {
       this.classrooms = t.body as Classroom[]
     })
     this.famApi.getAll().subscribe(t=>{
-      this.adelphie = t.body as Adelphie[]
+      this.adelphies = t.body as Adelphie[]
       console.log(t)
     })
   }
@@ -50,6 +54,7 @@ export class ChildDetailsComponent implements OnInit {
   update(nval:any){
     this.childNameUpdater.emit(nval)
   }
+
 
   sendToBackend(){
     console.log(this.child)

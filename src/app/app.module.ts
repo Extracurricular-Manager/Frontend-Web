@@ -50,6 +50,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NewAdelphieDialogComponent } from './dialogs/new-adelphie-dialog/new-adelphie-dialog.component';
+import { NewGradeDialogComponent } from './dialogs/new-grade-dialog/new-grade-dialog.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { NewAdelphieDialogComponent } from './dialogs/new-adelphie-dialog/new-ad
     SmartSelectorComponent,
     NewClassDialogComponent,
     IntentionnalyVoidComponentPleaseDoNotEditThanksComponent,
-    NewAdelphieDialogComponent
+    NewAdelphieDialogComponent,
+    NewGradeDialogComponent
   ],
 
   imports: [

@@ -49,12 +49,21 @@
             
 
                 <app-smart-selector
-                        [newContentItemString]="'Reliez à une famille'"
+                        [newContentItemString]="'Associer à une famille'"
                         [itemName]="'Famille'"
                         [newContentDialog]="naComp"
-                        [dataset]="adelphie"
+                        [dataset]="adelphies"
                         [selectedItem]="child.adelphie!.id"
                         (userSelection)="child.adelphie=$event" 
+                ></app-smart-selector>
+
+                <app-smart-selector
+                        [newContentItemString]="'Associer à un niveau'"
+                        [itemName]="'Niveau'"
+                        [newContentDialog]="ngComp"
+                        [dataset]="grades"
+                        [selectedItem]="child.gradeLevel!.id"
+                        (userSelection)="child.gradeLevel=$event" 
                 ></app-smart-selector>
             </div>
 

@@ -1,0 +1,8 @@
+<div [formGroup]="gradeForm" class="display-in-column">
+    <mat-form-field  appearance="fill">
+        <mat-label>Nom du niveau</mat-label>
+        <input matInput formControlName = "level" required>
+    </mat-form-field>
+    
+    <button mat-raised-button [mat-dialog-close]="sendGrade()" color="primary" style="width: 100%">Ajouter et sélectionner</button>
+</div>
