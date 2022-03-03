@@ -28,7 +28,7 @@ export class ChildApiService implements BaseApiService {
   }
 
   postOne(payload:Child){
-    return this.api.post(this.root+"/",payload)
+    return this.api.post(this.root,payload)
   }
 
   getOneData(id:number){
