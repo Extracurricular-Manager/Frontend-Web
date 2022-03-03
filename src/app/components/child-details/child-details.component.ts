@@ -9,6 +9,7 @@ import { NewAdelphieDialogComponent } from 'src/app/dialogs/new-adelphie-dialog/
 import { ChildApiService } from 'src/api/domain-specific/child-api.service';
 import { NewGradeDialogComponent } from 'src/app/dialogs/new-grade-dialog/new-grade-dialog.component';
 import { GradeLevel } from 'src/api/data/grade-level';
+import { GradeApiService } from 'src/api/domain-specific/grade-api.service';
 
 @Component({
   selector: 'app-child-details',
@@ -33,7 +34,7 @@ export class ChildDetailsComponent implements OnInit {
 
 
   constructor(private classApi:ClassroomApiService,
-              private childApi:ChildApiService,private famApi: FamilyApiService) {
+              private childApi:ChildApiService,private famApi: FamilyApiService,private gradeApi:GradeApiService) {
     this.ngOnRefresh()
   }
 
@@ -43,6 +44,10 @@ export class ChildDetailsComponent implements OnInit {
     })
     this.famApi.getAll().subscribe(t=>{
       this.adelphies = t.body as Adelphie[]
+      console.log(t)
+    })
+    this.gradeApi.getAll().subscribe(t=>{
+      this.grades = t.body as GradeLevel[]
       console.log(t)
     })
   }
