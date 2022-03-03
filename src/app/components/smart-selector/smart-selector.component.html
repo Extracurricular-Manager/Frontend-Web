@@ -1,5 +1,5 @@
 <mat-form-field appearance="fill">
-<mat-label>Classe</mat-label>
+<mat-label>{{this.itemName}}</mat-label>
 <mat-select [(ngModel)]="selectedItem" [id]="selectedItem.id">
     <mat-option *ngIf="noSelectionItemString">{{this.noSelectionItemString}}</mat-option>
     <mat-option *ngFor="let datasetItem of dataset" [id]="datasetItem.id" [value]="datasetItem.id" (click)="saveSelection(datasetItem)" >
