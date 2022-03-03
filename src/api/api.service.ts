@@ -55,19 +55,19 @@ export class ApiService {
       return this.http.get(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'})
     }
 
-    post(url:string,payload:any){
+    post<T>(url:string,payload:any){
         console.log(this.payloadHeader())
-        return this.http.post(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
+        return this.http.post<T>(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
-    put(url:string,payload:any){
+    put<T>(url:string,payload:any){
         console.log(this.payloadHeader())
-        return this.http.put(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
+        return this.http.put<T>(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
-    patch(url:string,payload:any){
+    patch<T>(url:string,payload:any){
         console.log(this.payloadHeader())
-        return this.http.patch(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
+        return this.http.patch<T>(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
     delete(url:string){
