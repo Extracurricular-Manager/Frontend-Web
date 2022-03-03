@@ -4,26 +4,38 @@
         <h2 style="padding-top: 4px">Profil</h2>
 
         <div class="display-in-row fit-content">
+
+            <!-- col 1 -->
             <div class="display-in-column fit-content">
                 <mat-form-field appearance="fill">
                     <mat-label>Prénom</mat-label>
                     <input matInput [(ngModel)]="child.name" (keyup)="update(child)">
                 </mat-form-field>
+
                 <mat-form-field appearance="fill">
                     <mat-label>Nom</mat-label>
                     <input matInput [(ngModel)]="child.surname">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
+                    <mat-label>Date de naissance</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="child.birthday">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <!-- mat-form-field appearance="fill">
                     <mat-label>Classe</mat-label>
                     <mat-select [(value)]="child.classroom!.id">
-                        <mat-option>Toutes les classes</mat-option>
                         <mat-option *ngFor="let truc of classrooms" [value]="truc.id" (click)="child.classroom = truc" >
                             {{truc.name}}
                         </mat-option>
                     </mat-select>
-                </mat-form-field>
+                </mat-form-field -->
+
             </div>
+
+            <!-- col 2 -->
             <div class="display-in-column fit-content">
 
                 <app-smart-selector
@@ -34,7 +46,8 @@
                         (userSelection)="child.classroom=$event"
                 ></app-smart-selector>
             </div>
+
         </div>
-        <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>
+        <button mat-raised-button color="primary" style="width: 100%" >Enregistrer</button>
     </mat-card>
 </div>
