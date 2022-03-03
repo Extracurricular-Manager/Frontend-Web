@@ -39,6 +39,7 @@ export class ChildDetailsComponent implements OnInit {
     })
     this.famApi.getAll().subscribe(t=>{
       this.adelphie = t.body as Adelphie[]
+      console.log(t)
     })
   }
 

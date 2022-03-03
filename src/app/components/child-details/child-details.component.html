@@ -46,16 +46,15 @@
                         [selectedItem]="child.classroom!.id"
                         (userSelection)="child.classroom=$event"
                 ></app-smart-selector>
-            </div>
-
-            <div class="display-in-column fit-content">
+            
 
                 <app-smart-selector
                         [newContentItemString]="'Reliez à une famille'"
+                        [itemName]="'Famille'"
                         [newContentDialog]="naComp"
                         [dataset]="adelphie"
                         [selectedItem]="child.adelphie!.id"
-                        (userSelection)="child.adelphie=$event"
+                        (userSelection)="child.adelphie=$event" 
                 ></app-smart-selector>
             </div>
 
