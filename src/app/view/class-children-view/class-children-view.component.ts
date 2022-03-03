@@ -9,8 +9,7 @@ import { Child } from "../../../api/data/child";
 })
 export class ClassChildrenViewComponent implements OnInit {
 
-  fam: Adelphie | undefined;
-  val: Child | undefined;
+  val: Child | Adelphie | undefined;
 
   constructor() { }
 
