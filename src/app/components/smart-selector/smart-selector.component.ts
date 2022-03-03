@@ -58,7 +58,7 @@ saveSelection(sel :any){
       // @ts-ignore
       if (!item.hasOwnProperty("name")){
         // @ts-ignore
-        return item.referingParentName + " " + referingParentSurname //definitely not a great fix but anyway
+        return item.referingParentName + " " + item.referingParentSurname //definitely not a great fix but anyway
       } else {
         // @ts-ignore
         return item.name
