@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SmartSelectorComponent } from './smart-selector.component';
 
 describe('SmartSelectorComponent', () => {
-  let component: SmartSelectorComponent;
-  let fixture: ComponentFixture<SmartSelectorComponent>;
+  let component: SmartSelectorComponent<any>;
+  let fixture: ComponentFixture<SmartSelectorComponent<any>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

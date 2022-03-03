@@ -30,39 +30,33 @@ export class ChildrenComponent implements OnInit {
   }
 
   createChild(){
-    var edit : Child = {
-      id : -1,
+    const edit: Child = {
+      id: -1,
       name: "",
       surname: "",
       birthday: new Date(),
-      classroom:  { 
-        id:        -1,
-        name:      "",
+      classroom: {
+        id: -1,
+        name: "",
         professor: "",
       },
       adelphie: {
-        id:                    -1,
-        referingParentName:    "",
+        id: -1,
+        referingParentName: "",
         referingParentSurname: "",
-        telephoneNumber:       "",
-        postalAdress:          "",
+        telephoneNumber: "",
+        postalAdress: "",
       },
       gradeLevel: {
-        id:    -1,
+        id:  0,
         level: "",
       },
-      diets:[ {
-        id:          -1,
-        name:        "",
-        description: "",
-      }],
-      facturation: {
-        id:            -1,
-        schoolService: "",
-        cost:          0,
-        payed:         false,
-      }
-    }   
+      presenceModel : [],
+      periodModel: [],
+      monthPaid: [],
+      diets: [],
+
+    };
     this.chold.emit(edit);
   }
 

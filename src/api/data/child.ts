@@ -6,23 +6,70 @@
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
-
 import {Classroom} from "./classroom";
 import {Adelphie} from "./adelphie";
-import {GradeLevel} from "./grade-level";
 import {Diet} from "./diet";
-import {Facturation} from "./facturation";
-
+import {GradeLevel} from "./grade-level";
 export interface Child {
-    id?:          number;
-    name?:        string;
-    surname?:     string;
-    birthday?:    Date;
-    classroom?:   Classroom;
-    adelphie?:    Adelphie;
-    gradeLevel?:  GradeLevel;
-    diets?:       Diet[];
-    facturation?: Facturation;
+    id?:         number;
+    name?:       string;
+    surname?:    string;
+    birthday?:   Date;
+    classroom?:  Classroom;
+    adelphie?:   Adelphie;
+    gradeLevel?: GradeLevel;
+    diets?:      Diet[];
+    periodModel?:   PeriodModel[];
+    presenceModel?: PresenceModel[]
+    monthPaid?:  ChildMonthPaid[];
+}
+
+export interface ChildMonthPaid {
+    id?:    number;
+    date?:  Date;
+    cost?:  number;
+    payed?: boolean;
+    child?: ChildClass;
+}
+
+export interface ChildClass {
+    id?:            number;
+    name?:          string;
+    surname?:       string;
+    birthday?:      Date;
+    classroom?:     Classroom;
+    adelphie?:      Adelphie;
+    gradeLevel?:    GradeLevel;
+    diets?:         Diet[];
+    periodModel?:   PeriodModel[];
+    presenceModel?: PresenceModel[];
+    monthPaid?:     ChildMonthPaidClass[];
+}
+
+export interface ChildMonthPaidClass {
+    id?:    number;
+    date?:  Date;
+    cost?:  number;
+    payed?: boolean;
+    child?: string;
+}
+
+export interface PeriodModel {
+    id?:           number;
+    serviceId?:    number;
+    begin?:        Date;
+    end?:          Date;
+    startBilling?: Date;
+    child?:        string;
+}
+
+export interface PresenceModel {
+    id?:        number;
+    name?:      string;
+    presence?:  boolean;
+    date?:      Date;
+    serviceId?: number;
+    child?:     string;
 }
 
 // Converts JSON strings to/from your types
@@ -133,8 +180,8 @@ function transform(val: any, typ: any, getProps: any, key: any = ''): any {
     if (typeof typ === "object") {
         return typ.hasOwnProperty("unionMembers") ? transformUnion(typ.unionMembers, val)
             : typ.hasOwnProperty("arrayItems")    ? transformArray(typ.arrayItems, val)
-            : typ.hasOwnProperty("props")         ? transformObject(getProps(typ), typ.additional, val)
-            : invalidValue(typ, val);
+                : typ.hasOwnProperty("props")         ? transformObject(getProps(typ), typ.additional, val)
+                    : invalidValue(typ, val);
     }
     // Numbers can be parsed by Date but shouldn't be.
     if (typ === Date && typeof val !== "number") return transformDate(val);
@@ -179,33 +226,71 @@ const typeMap: any = {
         { json: "adelphie", js: "adelphie", typ: u(undefined, r("Adelphie")) },
         { json: "gradeLevel", js: "gradeLevel", typ: u(undefined, r("GradeLevel")) },
         { json: "diets", js: "diets", typ: u(undefined, a(r("Diet"))) },
-        { json: "facturation", js: "facturation", typ: u(undefined, r("Facturation")) },
+        { json: "monthPaid", js: "monthPaid", typ: u(undefined, a(r("ChildMonthPaid"))) },
     ], false),
     "Adelphie": o([
         { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "referingParentName", js: "referingParentName", typ: u(undefined, null) },
-        { json: "referingParentSurname", js: "referingParentSurname", typ: u(undefined, null) },
-        { json: "telephoneNumber", js: "telephoneNumber", typ: u(undefined, null) },
-        { json: "postalAdress", js: "postalAdress", typ: u(undefined, null) },
+        { json: "referingParentName", js: "referingParentName", typ: u(undefined, "") },
+        { json: "referingParentSurname", js: "referingParentSurname", typ: u(undefined, "") },
+        { json: "telephoneNumber", js: "telephoneNumber", typ: u(undefined, "") },
+        { json: "postalAdress", js: "postalAdress", typ: u(undefined, "") },
     ], false),
     "Classroom": o([
         { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "name", js: "name", typ: u(undefined, null) },
-        { json: "professor", js: "professor", typ: u(undefined, null) },
+        { json: "name", js: "name", typ: u(undefined, "") },
+        { json: "professor", js: "professor", typ: u(undefined, "") },
     ], false),
     "Diet": o([
         { json: "id", js: "id", typ: u(undefined, 0) },
         { json: "name", js: "name", typ: u(undefined, "") },
         { json: "description", js: "description", typ: u(undefined, "") },
-    ], false),
-    "Facturation": o([
-        { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "schoolService", js: "schoolService", typ: u(undefined, null) },
-        { json: "cost", js: "cost", typ: u(undefined, null) },
-        { json: "payed", js: "payed", typ: u(undefined, null) },
+        { json: "children", js: "children", typ: u(undefined, a("")) },
     ], false),
     "GradeLevel": o([
         { json: "id", js: "id", typ: u(undefined, 0) },
-        { json: "level", js: "level", typ: u(undefined, null) },
+        { json: "level", js: "level", typ: u(undefined, "") },
+    ], false),
+    "ChildMonthPaid": o([
+        { json: "id", js: "id", typ: u(undefined, 0) },
+        { json: "date", js: "date", typ: u(undefined, Date) },
+        { json: "cost", js: "cost", typ: u(undefined, 0) },
+        { json: "payed", js: "payed", typ: u(undefined, true) },
+        { json: "child", js: "child", typ: u(undefined, r("ChildClass")) },
+    ], false),
+    "ChildClass": o([
+        { json: "id", js: "id", typ: u(undefined, 0) },
+        { json: "name", js: "name", typ: u(undefined, "") },
+        { json: "surname", js: "surname", typ: u(undefined, "") },
+        { json: "birthday", js: "birthday", typ: u(undefined, Date) },
+        { json: "classroom", js: "classroom", typ: u(undefined, r("Classroom")) },
+        { json: "adelphie", js: "adelphie", typ: u(undefined, r("Adelphie")) },
+        { json: "gradeLevel", js: "gradeLevel", typ: u(undefined, r("GradeLevel")) },
+        { json: "diets", js: "diets", typ: u(undefined, a(r("Diet"))) },
+        { json: "periodModel", js: "periodModel", typ: u(undefined, a(r("PeriodModel"))) },
+        { json: "presenceModel", js: "presenceModel", typ: u(undefined, a(r("PresenceModel"))) },
+        { json: "monthPaid", js: "monthPaid", typ: u(undefined, a(r("ChildMonthPaidClass"))) },
+    ], false),
+    "ChildMonthPaidClass": o([
+        { json: "id", js: "id", typ: u(undefined, 0) },
+        { json: "date", js: "date", typ: u(undefined, Date) },
+        { json: "cost", js: "cost", typ: u(undefined, 0) },
+        { json: "payed", js: "payed", typ: u(undefined, true) },
+        { json: "child", js: "child", typ: u(undefined, "") },
+    ], false),
+    "PeriodModel": o([
+        { json: "id", js: "id", typ: u(undefined, 0) },
+        { json: "serviceId", js: "serviceId", typ: u(undefined, 0) },
+        { json: "begin", js: "begin", typ: u(undefined, Date) },
+        { json: "end", js: "end", typ: u(undefined, Date) },
+        { json: "startBilling", js: "startBilling", typ: u(undefined, Date) },
+        { json: "child", js: "child", typ: u(undefined, "") },
+    ], false),
+    "PresenceModel": o([
+        { json: "id", js: "id", typ: u(undefined, 0) },
+        { json: "name", js: "name", typ: u(undefined, "") },
+        { json: "presence", js: "presence", typ: u(undefined, true) },
+        { json: "date", js: "date", typ: u(undefined, Date) },
+        { json: "serviceId", js: "serviceId", typ: u(undefined, 0) },
+        { json: "child", js: "child", typ: u(undefined, "") },
     ], false),
 };
