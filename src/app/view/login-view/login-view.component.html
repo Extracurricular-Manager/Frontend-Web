@@ -12,11 +12,11 @@ un bouton c'est tout
         <div class="display-in-column">
             <mat-form-field appearance="fill">
                 <mat-label>Identifant</mat-label>
-                <input matInput placeholder="pat@example.com" [formControl]="uname" required>
+                <input matInput [formControl]="uname" required>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Mot de passe</mat-label>
-                <input matInput [formControl]="password" required>
+                <input matInput type="password" [formControl]="password" required>
             </mat-form-field>
         </div>
         <button mat-raised-button color="primary" (click)="loginAction()">Se connecter</button>
