@@ -2,6 +2,9 @@ import {AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output, V
 import {ComponentType} from "@angular/cdk/overlay";
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogStepperComponent } from 'src/app/components/dialog-stepper/dialog-stepper.component';
+import { ChildApiService } from 'src/api/domain-specific/child-api.service';
+import { ClassroomApiService } from 'src/api/domain-specific/classroom-api.service';
 //import { DialogStepperComponent } from 'src/app/dialog-stepper/dialog-stepper.component';
 
 export interface PeriodicElement {
@@ -19,9 +22,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
   {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
   {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
 
@@ -32,16 +32,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
     }) 
 
     export class ModulesViewComponent implements OnInit {
-      @Input() newContentDialog : ComponentType<any>
+     // @Input() newContentDialog : ComponentType<any>
       @Output() shouldRefreshInputData = new EventEmitter();
-      @Input() dataset : any[] | undefined
-      @Input() selectedItem : any
+      childrenList: any;
+      @Input() dataset : any[] | undefined;
+      @Input() selectedItem : any;
+      @Input() itemsToList : any;
       
       
-  constructor(public dialog: MatDialog) {    
-    this.newContentDialog = StepDialog;
+  constructor(private chilApi:ChildApiService, private classApi:ClassroomApiService,) {    
+    //this.newContentDialog = StepDialog;
   }
-      ngOnInit(): void { }
+      ngOnInit(): void { 
+        console.log("Hellpzlp")
+        this.getChilds();
+        this.addToTab();
+      }
+     
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -52,15 +59,32 @@ const ELEMENT_DATA: PeriodicElement[] = [
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(StepDialog);
+  getChilds(){
+    if (this.chilApi){
+    this.chilApi.getAll().subscribe(t=>{
+      this.childrenList = []
+      this.childrenList = t.body;
+      console.log(t.body);
+    })
+    }
+    console.log("HEY : " + this.childrenList);
+  }
+
+  addToTab() {   
+    ELEMENT_DATA.push(this.childrenList);
+    
+  }
+/*   openDialog() {
+    //const dialogRef = this.dialog.open(StepDialog);
+    const dialogRef = this.dialog.open(DialogStepperComponent);
+
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-  }
+  } */
 
-  openDialog2(): void {
+/*   openDialog2(): void {
     const dialogRef = this.dialog
         .open(this.newContentDialog,
             {
@@ -75,23 +99,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
               }
             }
         )
-  }
-
-
+  } */
 
 }
 
-@Component({
-  selector: 'step-dialog',
-  templateUrl: 'step-dialog.html',
- }) 
- 
-export class StepDialog{
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data:any) { }
-
-  ngOnInit(): void {
-  }
-} 
     
 

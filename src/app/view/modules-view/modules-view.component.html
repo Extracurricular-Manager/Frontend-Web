@@ -1,7 +1,43 @@
+<mat-sidenav-container>
+    
+  <mat-sidenav mode="side" opened #sidenav>
+          <!-- <a href="/{{routePath}}#usersComp"> -->
+
+            <h3> Garderie Matin </h3> 
+            <button mat-fab ><div class="material-icons">edit</div></button>
+
+      <!--     </a>
+          <a href="/{{routePath}}#rolesComp"> -->
+            <mat-divider></mat-divider>
+            <h3> Cantine </h3>
+            <button mat-fab ><div class="material-icons">edit</div></button>
+           
+        <!--   </a>
+          <a href="/{{routePath}}#"> -->
+            <mat-divider></mat-divider>
+            <h3>  Garderie Soir </h3> 
+            <button mat-fab ><div class="material-icons">edit</div></button>
+             
+       <!--    </a>
+          <a href="/{{routePath}}#"> -->
+            <mat-divider></mat-divider>
+            <button mat-fab ><div class="material-icons-2">+</div></button>
+              
+        <!--   </a> -->
+      
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+
+
+
+
 <div class="home-card">
 <mat-card class="home-card-access">
 <div class="material-icons md-dark md-inactive">wb_sunny</div>
 <div class="title">Garderie Matin</div>
+<!-- <div class="material-icons">edit</div> -->
 
 <mat-form-field appearance="standard">
     <mat-label>Filtrage</mat-label>
@@ -46,7 +82,6 @@
 </mat-card>
 
 <!-- Button Pop à mettre dans sidenav -->
-<button mat-fab (click)="openDialog()" [value]="true"><div class="material-icons">add</div></button>
-</div>
+<!-- <button mat-fab (click)="openDialog()" [value]="true"><div class="material-icons">add</div></button>
+</div> -->
 
-<!-- Dialog -->
