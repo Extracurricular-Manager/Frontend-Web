@@ -8,6 +8,6 @@
     </div>
 
     <app-classroom [value]=selectedClassroom [ItemsList]="classesList" [hidden]="showAdelphie" (selectedClassroom)="onClassroomSelectorUpdate($event)" class="fit-content"></app-classroom>
-    <app-children [itemsList] = (this.childrenList) (chold)="this.selectedItem.emit($event)"></app-children>
+    <app-children [itemsList] = (this.peopleList) [isAdelphie]="this.showAdelphie" (chold)="this.selectedItem.emit($event)"></app-children>
 
 </mat-card>

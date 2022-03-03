@@ -28,7 +28,7 @@ export class NewAdelphieDialogComponent implements OnInit {
 
   sendAdelphia(){
       this.famApi.sendFamily(this.adelphieForm.value).subscribe(t=>{
-        console.log(t)
+        return t
       }) 
 }
 }

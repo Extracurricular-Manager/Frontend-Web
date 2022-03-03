@@ -10,8 +10,9 @@ import { ClassroomApiService } from 'src/api/domain-specific/classroom-api.servi
 })
 export class ChildrenComponent implements OnInit {
   @Output() chold = new EventEmitter<any>();
-  @Input() itemsList : Child[] | undefined;
-  @Input() value : Child | undefined;
+  @Input() itemsList : Child[] | Adelphie[] | undefined;
+  @Input() value : Child  | Adelphie | undefined;
+  @Input() isAdelphie : boolean = false;
   constructor() {
   }
 
@@ -29,8 +30,8 @@ export class ChildrenComponent implements OnInit {
     return result
   }
 
-  createChild(){
-    const edit: Child = {
+  createNewItem(){
+    const child: Child = {
       id: -1,
       name: "",
       surname: "",
@@ -57,7 +58,14 @@ export class ChildrenComponent implements OnInit {
       diets: [],
 
     };
-    this.chold.emit(edit);
+    const adelph: Adelphie = {
+        id:-1,
+        referingParentName:"",
+        referingParentSurname:"",
+        telephoneNumber:"",
+        postalAdress:""
+    }
+    this.chold.emit(this.isAdelphie ? adelph : child);
   }
 
   getChildName(ch : Child){

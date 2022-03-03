@@ -16,7 +16,7 @@ export class ChildApiService implements BaseApiService {
 
   sendChild(payload:Child){
     // @ts-ignore
-    if(!(payload.birthday instanceof String))
+    if(!(payload.birthday! instanceof String))
       { // @ts-ignore
         payload.birthday = payload.birthday.toISOString().split("T")[0]
       }

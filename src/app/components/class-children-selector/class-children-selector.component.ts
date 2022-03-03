@@ -13,7 +13,7 @@ export class ClassChildrenSelectorComponent implements OnInit {
   @Output() selectedItem = new EventEmitter<any>();
   @Input() itemsToList : any;
   showAdelphie= false;
-  childrenList: any;
+  peopleList: any;
   selectedClassroom : Classroom | undefined;
   classesList: Classroom[] = [];
   constructor(private chilApi:ChildApiService,
@@ -27,19 +27,19 @@ export class ClassChildrenSelectorComponent implements OnInit {
 
     if (this.selectedClassroom){
       this.classApi.getChildren(this.selectedClassroom.id!).subscribe(t=>{
-        this.childrenList = []
-        this.childrenList = t.body;
+        this.peopleList = []
+        this.peopleList = t.body;
       })
     } else {
       if(this.showAdelphie){
         this.famApi.getAll().subscribe(t=>{
-          this.childrenList = []
-          this.childrenList = t.body;
+          this.peopleList = []
+          this.peopleList = t.body;
         })
       } else {
       this.chilApi.getAll().subscribe(t=>{
-        this.childrenList = []
-        this.childrenList = t.body;
+        this.peopleList = []
+        this.peopleList = t.body;
       })
       }
     }

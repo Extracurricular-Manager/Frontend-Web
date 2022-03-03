@@ -49,24 +49,19 @@ export class ApiService {
       return {Authorization:"Bearer " + localStorage.getItem("token")?? "","Content-Type": "application/json"}
     }
 
-
-
     get<T>(url:string){
       return this.http.get(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'})
     }
 
     post<T>(url:string,payload:any){
-        console.log(this.payloadHeader())
         return this.http.post<T>(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
     put<T>(url:string,payload:any){
-        console.log(this.payloadHeader())
         return this.http.put<T>(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
     patch<T>(url:string,payload:any){
-        console.log(this.payloadHeader())
         return this.http.patch<T>(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
