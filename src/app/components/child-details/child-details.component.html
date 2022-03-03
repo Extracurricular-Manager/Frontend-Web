@@ -47,6 +47,17 @@
                 ></app-smart-selector>
             </div>
 
+            <div class="display-in-column fit-content">
+
+                <app-smart-selector
+                        [newContentItemString]="'Reliez à une famille'"
+                        [newContentDialog]="naComp"
+                        [dataset]="adelphie"
+                        [selectedItem]="child.adelphie!.id"
+                        (userSelection)="child.adelphie=$event"
+                ></app-smart-selector>
+            </div>
+
         </div>
         <button mat-raised-button color="primary" style="width: 100%" >Enregistrer</button>
     </mat-card>

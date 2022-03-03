@@ -49,7 +49,7 @@ import { IntentionnalyVoidComponentPleaseDoNotEditThanksComponent } from './comp
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatStepperModule } from '@angular/material/stepper';
-
+import { NewAdelphieDialogComponent } from './dialogs/new-adelphie-dialog/new-adelphie-dialog.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +73,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     FamilyDetailsComponent,
     SmartSelectorComponent,
     NewClassDialogComponent,
-    IntentionnalyVoidComponentPleaseDoNotEditThanksComponent
+    IntentionnalyVoidComponentPleaseDoNotEditThanksComponent,
+    NewAdelphieDialogComponent
   ],
 
   imports: [
