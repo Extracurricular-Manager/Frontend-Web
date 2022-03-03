@@ -2,7 +2,6 @@ import {AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output, V
 import {ComponentType} from "@angular/cdk/overlay";
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogStepperComponent } from 'src/app/components/dialog-stepper/dialog-stepper.component';
 import { ChildApiService } from 'src/api/domain-specific/child-api.service';
 import { ClassroomApiService } from 'src/api/domain-specific/classroom-api.service';
 //import { DialogStepperComponent } from 'src/app/dialog-stepper/dialog-stepper.component';

@@ -13,7 +13,7 @@ export class FamilyApiService implements BaseApiService {
 
   root = "/family"
 
-  pushOne(payload:Adelphie){
+  postOne(payload:Adelphie){
     return this.api.post(this.root+"/"+payload.id!,payload)
   }
 

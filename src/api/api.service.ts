@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -45,20 +45,29 @@ export class ApiService {
       return {Authorization:"Bearer " + localStorage.getItem("token")?? ""}
     }
 
+    payloadHeader(){
+      return {Authorization:"Bearer " + localStorage.getItem("token")?? "","Content-Type": "application/json"}
+    }
+
+
+
     get<T>(url:string){
       return this.http.get(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'})
     }
 
     post(url:string,payload:any){
-        return this.http.post(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'},payload)
+        console.log(this.payloadHeader())
+        return this.http.post(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
     put(url:string,payload:any){
-        return this.http.put(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'},payload)
+        console.log(this.payloadHeader())
+        return this.http.put(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
     patch(url:string,payload:any){
-        return this.http.patch(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'},payload)
+        console.log(this.payloadHeader())
+        return this.http.patch(this.baseBackendUrl + url,payload,{headers:this.payloadHeader(), observe:"response",responseType: 'json'})
     }
 
     delete(url:string){

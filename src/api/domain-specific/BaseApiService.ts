@@ -6,7 +6,7 @@ export interface BaseApiService {
 
     root  :string
 
-    pushOne(payload:any):any
+    postOne(payload:any):any
 
     getOneData(id:number):any
 

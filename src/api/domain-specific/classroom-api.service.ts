@@ -14,7 +14,7 @@ export class ClassroomApiService implements BaseApiService{
 
   root = "/classroom"
 
-  pushOne(payload:Classroom){
+  postOne(payload:Classroom){
     return this.api.post(this.root+"/"+payload.id!,payload)
   }
 

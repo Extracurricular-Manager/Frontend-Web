@@ -6,6 +6,7 @@ import { Adelphie } from 'src/api/data/adelphie';
 import {NewClassDialogComponent} from "../../dialogs/new-class-dialog/new-class-dialog.component";
 import { FamilyApiService } from 'src/api/domain-specific/family-api.service';
 import { NewAdelphieDialogComponent } from 'src/app/dialogs/new-adelphie-dialog/new-adelphie-dialog.component';
+import { ChildApiService } from 'src/api/domain-specific/child-api.service';
 
 @Component({
   selector: 'app-child-details',
@@ -26,7 +27,9 @@ export class ChildDetailsComponent implements OnInit {
 
   selectedClassroom : Classroom | undefined
 
-  constructor(private classApi:ClassroomApiService, private famApi: FamilyApiService) {
+
+  constructor(private classApi:ClassroomApiService,
+              private childApi:ChildApiService,private famApi: FamilyApiService) {
     this.ngOnRefresh()
   }
 
@@ -47,6 +50,12 @@ export class ChildDetailsComponent implements OnInit {
     this.childNameUpdater.emit(nval)
   }
 
-
+  sendToBackend(){
+    console.log(this.child)
+    if(this.child)
+      this.childApi.sendChild(this.child).subscribe(t=>{
+        console.log(t)
+      })
+  }
 
 }

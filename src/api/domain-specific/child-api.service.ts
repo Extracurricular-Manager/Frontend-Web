@@ -10,10 +10,25 @@ export class ChildApiService implements BaseApiService {
 
   protected constructor(private api: ApiService) { }
 
-   root = "/children"
+  root = "/child"
 
-  pushOne(payload:Child){
-    return this.api.post(this.root+"/"+payload.id!,payload)
+   rootAll = "/children"
+
+  sendChild(payload:Child){
+    if(payload.id == -1){
+      delete payload.id
+      return this.postOne(payload)
+    } else {
+      return this.patch(payload)
+    }
+  }
+
+  patch(payload:Child){
+    return this.api.patch(this.root+"/"+payload.id!,payload)
+  }
+
+  postOne(payload:Child){
+    return this.api.post(this.root+"/",payload)
   }
 
   getOneData(id:number){
@@ -21,7 +36,7 @@ export class ChildApiService implements BaseApiService {
   }
 
   getAll(){
-    return this.api.get<Child[]>(this.root)
+    return this.api.get<Child[]>(this.rootAll)
   }
 
 }
