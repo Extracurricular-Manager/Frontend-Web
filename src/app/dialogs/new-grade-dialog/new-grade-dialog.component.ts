@@ -25,7 +25,7 @@ export class NewGradeDialogComponent implements OnInit {
   }
 
   sendGrade(){
-    this.gradeApi.sendClassroom(this.gradeForm.value).subscribe(t=>{
+    this.gradeApi.sendGrade(this.gradeForm.value).subscribe(t=>{
       console.log(t)
     }) 
   }
