@@ -3,6 +3,7 @@ import {Child} from "../../../api/data/child";
 import {ClassroomApiService} from "../../../api/domain-specific/classroom-api.service";
 import {Classroom} from "../../../api/data/classroom";
 import {NewClassDialogComponent} from "../../dialogs/new-class-dialog/new-class-dialog.component";
+import {ChildApiService} from "../../../api/domain-specific/child-api.service";
 
 @Component({
   selector: 'app-child-details',
@@ -21,7 +22,8 @@ export class ChildDetailsComponent implements OnInit {
 
   selectedClassroom : Classroom | undefined
 
-  constructor(private classApi:ClassroomApiService) {
+  constructor(private classApi:ClassroomApiService,
+              private childApi:ChildApiService) {
     this.ngOnRefresh()
   }
 
@@ -39,6 +41,12 @@ export class ChildDetailsComponent implements OnInit {
     this.childNameUpdater.emit(nval)
   }
 
-
+  sendToBackend(){
+    console.log(this.child)
+    if(this.child)
+      this.childApi.sendChild(this.child).subscribe(t=>{
+        console.log(t)
+      })
+  }
 
 }
