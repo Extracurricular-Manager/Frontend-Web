@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Child} from "../../../../api/data/child";
 import {Adelphie} from "../../../../api/data/adelphie";
+import { ClassroomApiService } from 'src/api/domain-specific/classroom-api.service';
 
 @Component({
   selector: 'app-children',
@@ -21,12 +22,49 @@ export class ChildrenComponent implements OnInit {
     this.value = undefined
   }
 
+
   displayCorrectName(item : Child | Adelphie){
     let result =  item.hasOwnProperty("name") ? this.getChildName(item) : this.getFamilyReferentName(item)
     //console.log(result)
     return result
   }
 
+  createChild(){
+    var edit : Child = {
+      id : -1,
+      name: "",
+      surname: "",
+      birthday: new Date(),
+      classroom:  { 
+        id:        -1,
+        name:      "",
+        professor: "",
+      },
+      adelphie: {
+        id:                    -1,
+        referingParentName:    "",
+        referingParentSurname: "",
+        telephoneNumber:       "",
+        postalAdress:          "",
+      },
+      gradeLevel: {
+        id:    -1,
+        level: "",
+      },
+      diets:[ {
+        id:          -1,
+        name:        "",
+        description: "",
+      }],
+      facturation: {
+        id:            -1,
+        schoolService: "",
+        cost:          0,
+        payed:         false,
+      }
+    }   
+    this.chold.emit(edit);
+  }
 
   getChildName(ch : Child){
     return ch.name + " " + ch.surname

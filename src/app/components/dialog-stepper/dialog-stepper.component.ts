@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import {AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {ComponentType} from "@angular/cdk/overlay";
+import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-stepper',

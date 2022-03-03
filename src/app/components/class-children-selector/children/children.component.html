@@ -4,6 +4,6 @@
         {{displayCorrectName(child)}}
         <mat-divider></mat-divider>
     </mat-list-option>
-    <mat-list-option>+</mat-list-option>
+    <mat-list-option (click) = "createChild()">+</mat-list-option>
 </mat-selection-list>
 </cdk-virtual-scroll-viewport>
