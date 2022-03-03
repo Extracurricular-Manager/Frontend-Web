@@ -1,1 +1,38 @@
-<p>family-details works!</p>
+<div class="fit-content" *ngIf="adelphie">
+    <h1>{{[adelphie.referingParentName]}} {{adelphie.referingParentSurname}}</h1>
+    <mat-card class="fit-content">
+        <h2 style="padding-top: 4px">Profil</h2>
+
+        <div class="display-in-row fit-content">
+
+            <!-- col 1 -->
+            <div class="display-in-column fit-content">
+                <mat-form-field appearance="fill">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput [(ngModel)]="adelphie.referingParentName">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Nom</mat-label>
+                    <input matInput [(ngModel)]="adelphie.referingParentSurname">
+                </mat-form-field>
+            </div>
+
+            <!-- col 2 -->
+            <div class="display-in-column fit-content">
+                <mat-form-field appearance="fill">
+                    <mat-label>Numero de téléphone</mat-label>
+                    <input matInput [(ngModel)]="adelphie.telephoneNumber">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Adresse postale</mat-label>
+                    <input matInput [(ngModel)]="adelphie.postalAdress">
+                </mat-form-field>
+            </div>
+
+
+        </div>
+        <button mat-raised-button color="primary" style="width: 100%">Enregistrer</button>
+    </mat-card>
+</div>
