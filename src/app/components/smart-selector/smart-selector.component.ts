@@ -56,14 +56,15 @@ saveSelection(sel :any){
   correctlyGenerateName(item:T){
     
     try {
-      // @ts-ignore
-      if (item && !item.hasOwnProperty("name") ){
-        console.log(item)
+
+      if (item){
+
         // @ts-ignore
-        return item.referingParentName + " " + item.referingParentSurname //definitely not a great fix but anyway
-      } else {
+        if(item.hasOwnProperty("name")) return item.name
         // @ts-ignore
-        return item.name
+        if(item.hasOwnProperty("referingParentName") && item.hasOwnProperty("referingParentName")) return item.referingParentName + " " + item.referingParentSurname //definitely not a great fix but anyway
+        // @ts-ignore
+        if(item.hasOwnProperty("level")) return item.level
       }
     } catch (e){
       console.error(e)

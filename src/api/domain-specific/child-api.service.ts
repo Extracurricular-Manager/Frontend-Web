@@ -15,12 +15,14 @@ export class ChildApiService implements BaseApiService {
    rootAll = "/children"
 
   sendChild(payload:Child){
-    console.log("i'm in")
+    // @ts-ignore
+    if(!(payload.birthday instanceof String))
+      { // @ts-ignore
+        payload.birthday = payload.birthday.toISOString().split("T")[0]
+      }
+    console.log(payload)
     if(payload.id == -1){
-      console.log("pas d'id on supprime la prop")
-      console.log(payload)
       delete payload.id
-      console.log(payload)
       return this.postOne(payload)
     } else {
       return this.patch(payload)
