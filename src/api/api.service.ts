@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http:HttpClient, private router: Router) { }
 
- baseBackendUrl = "http://148.60.11.219/api"
+ baseBackendUrl = "/api"
 
   saveToken(tok:string){
       const extractedToken = JSON.parse(tok)["id_token"];

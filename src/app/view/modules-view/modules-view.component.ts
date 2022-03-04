@@ -87,7 +87,7 @@ const DEPARTURES: string[] = []
   addToTab() {   
 /*     CHILD_DATA.push(this.childrenList);
     console.log("CHILD");
-    console.log(CHILD_DATA);
+    console.log(CHILD_DATA); 
     DATES.push(this.childrenList) */
     console.log("WESH");
 
