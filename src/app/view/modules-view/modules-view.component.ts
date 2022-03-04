@@ -1,10 +1,20 @@
-import {AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {ComponentType} from "@angular/cdk/overlay";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ChildApiService } from 'src/api/domain-specific/child-api.service';
 import { ClassroomApiService } from 'src/api/domain-specific/classroom-api.service';
+import { Child } from 'src/api/data/child';
 //import { DialogStepperComponent } from 'src/app/dialog-stepper/dialog-stepper.component';
+
+
+
+export interface DayNursery {
+Date: string,
+Nom: string,
+Prénom: string,
+//Présence: ,
+HeureArrivee: string,
+HeureDepart: string
+}
 
 export interface PeriodicElement {
   name: string;
@@ -13,7 +23,7 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const CHILD_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -23,6 +33,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
 ];
 
+const DATES: string[] = [];
+const NAMES: string[] = [];
+const SURNAMES: string[] = [];
+const ARRIVING: string[] = [];
+const DEPARTURES: string[] = []
 
     @Component({
      selector: 'app-modules-view',
@@ -33,7 +48,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     export class ModulesViewComponent implements OnInit {
      // @Input() newContentDialog : ComponentType<any>
       @Output() shouldRefreshInputData = new EventEmitter();
-      childrenList: any;
+      childrenList: Child[] | undefined;
       @Input() dataset : any[] | undefined;
       @Input() selectedItem : any;
       @Input() itemsToList : any;
@@ -43,14 +58,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
     //this.newContentDialog = StepDialog;
   }
       ngOnInit(): void { 
-        console.log("Hellpzlp")
         this.getChilds();
         this.addToTab();
       }
      
 
+  displayedColumns2: string[] = ['Date', 'Nom', 'Prénom', 'Présence',"Heure d'arrivée", 'Heure de départ'];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(CHILD_DATA);
 
 
   applyFilter(event: Event) {
@@ -60,45 +75,33 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
   getChilds(){
     if (this.chilApi){
-    this.chilApi.getAll().subscribe(t=>{
-      this.childrenList = []
-      this.childrenList = t.body;
+      this.chilApi.getAll().subscribe(t=>{
+        this.childrenList = t.body as Child[];
+        this.addToTab();
       console.log(t.body);
-    })
+      })
     }
     console.log("HEY : " + this.childrenList);
   }
 
   addToTab() {   
-    ELEMENT_DATA.push(this.childrenList);
-    
-  }
-/*   openDialog() {
-    //const dialogRef = this.dialog.open(StepDialog);
-    const dialogRef = this.dialog.open(DialogStepperComponent);
+/*     CHILD_DATA.push(this.childrenList);
+    console.log("CHILD");
+    console.log(CHILD_DATA);
+    DATES.push(this.childrenList) */
+    console.log("WESH");
 
+    this.childrenList!.forEach((child: Child) => {
+ /*      if(child.periodModel)
+      DATES.push((child.periodModel)) */
+      console.log("LOG"); 
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      if(child.name)
+        NAMES.push(child.name)
+      
+        console.log(child.name)
     });
-  } */
-
-/*   openDialog2(): void {
-    const dialogRef = this.dialog
-        .open(this.newContentDialog,
-            {
-              data:{}
-            })
-        .afterClosed().subscribe(n=>{
-          console.log(n)
-              if (n != null) {
-                this.dataset?.push(n)
-                this.shouldRefreshInputData.emit(true)
-                this.selectedItem = n
-              }
-            }
-        )
-  } */
+  }
 
 }
 

@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http:HttpClient, private router: Router) { }
 
-  private baseBackendUrl = "/api"
+ baseBackendUrl = "/api"
 
   saveToken(tok:string){
       const extractedToken = JSON.parse(tok)["id_token"];
@@ -51,6 +51,9 @@ export class ApiService {
 
     get<T>(url:string){
       return this.http.get(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'json'})
+    }
+    getRaw<T>(url:string){
+      return this.http.get(this.baseBackendUrl + url,{headers:this.standardHeader(), observe:"response",responseType: 'blob'})
     }
 
     post<T>(url:string,payload:any){

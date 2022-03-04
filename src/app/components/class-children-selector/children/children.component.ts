@@ -35,7 +35,7 @@ export class ChildrenComponent implements OnInit {
       id: -1,
       name: "",
       surname: "",
-      birthday: new Date(),
+      birthday: undefined,
       classroom: {
         id: -1,
         name: "",
@@ -49,7 +49,7 @@ export class ChildrenComponent implements OnInit {
         postalAdress: "",
       },
       gradeLevel: {
-        id:  0,
+        id:  -1,
         level: "",
       },
       presenceModel : [],
